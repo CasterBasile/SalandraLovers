@@ -1,0 +1,58 @@
+.mdl-button {
+  margin: 10px;
+}
+
+.mdl-layout .mdl-button.mdl-js-button.mdl-button--fab.mdl-button--colored.custom {
+  background-color: #c72715 !important;
+}
+
+body {
+  background-color: #943126;
+}
+
+.mdl-layout__header {
+  background-color: #F1C40F;
+}
+
+.mdl-layout-title {
+  color: #196F3D;
+  font-weight: bold;
+}
+
+/* Imposta il colore del testo in bianco */
+.mdl-layout__content * {
+  color: #FFFFFF;
+}
+
+.mdl-layout__drawer-button .material-icons {
+  color: #196F3D !important;
+}
+
+/* Aggiunge il bordo al pulsante custom */
+.custom {
+  border: 2px solid #196F3D;
+}
+
+.mdl-layout__drawer {
+  background-color: #F1C40F; /* Cambia il colore di sfondo del menu laterale a giallo */
+}
+
+.enable-notifications {
+  background-color: #c72715 !important; /* Cambia il colore di sfondo del pulsante a un rosso più scuro */
+  color: #fff; /* Cambia il colore del testo del pulsante a bianco */
+  border: 3px solid #196F3D; /* Aggiunge un bordino di colore #196F3D */
+}
+
+
+/* Aggiunge il bordo intorno alle lettere del titolo h3 */
+.mdl-cell.mdl-cell--12-col.text-center h3 {
+  color: #196F3D; /* Colore del testo */
+  font-weight: bold; /* Testo in grassetto */
+  text-shadow: -1px -1px 0 #196F3D, 1px -1px 0 #196F3D, -1px 1px 0 #196F3D, 1px 1px 0 #196F3D;
+}
+
+/* Rendere tutte le scritte  del menù in grassetto */
+.mdl-layout-title, .mdl-navigation__link{
+  font-weight: bold;
+  color: #196F3D !important;
+}
