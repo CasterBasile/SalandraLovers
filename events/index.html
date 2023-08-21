@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.indigo-pink.min.css">
-  <link rel="stylesheet" href="/src/css/home.css">
+  <link rel="stylesheet" href="/src/css/events.css">
   <link rel="manifest" href="/manifest.json">
   <meta name="msapplication-TileImage" content="/src/images/icons/app-icon-144x144.png">
   <meta name="msapplication-TileColor" content="#fff">
@@ -64,17 +64,47 @@
         </div>
       </nav>
     </div>
-    <main class="mdl-layout__content mat-typography">
+      <main class="mdl-layout__content mat-typography">
         <h5 class="text-center mdl-color-text--primary"><b>Eventi</b></h5>
         <p class="text-center">
-          Qui troverai i prossimi eventi nel bosco!
-        </p>                  
-  </div>
-</div>
+            Qui troverai i prossimi eventi nel bosco!
+        </p> 
+
+        <div class="banner-list">
+          <div class="banner-container">
+              <div class="banner-link open-modal" data-modal="eventModal"> <!-- Aggiunta dell'attributo data-modal -->
+                  <div class="banner-overlay"></div>
+                  <img src="/src/images/eremo.jpg" alt="Evento 1">
+                  <div class="banner-title">Visita all'eremo di Pietraspaccata</div>
+                  <div class="banner-subtitle">20/09/2023 - 9:30</div>
+                  <button class="open-modal">Visualizza Dettagli</button>
+              </div>
+          </div>
+          <!-- Altri banner simili... -->
+      </div>
+      
+      </main>
+      <div class="modal" id="eventModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Visita all'eremo di Pietraspaccata</h2>
+            <p>
+              "Visita all'eremo di Pietraspaccata" è un affascinante evento che ti offre l'opportunità di 
+              esplorare uno dei luoghi più suggestivi della regione. Durante questa visita guidata, 
+              avrai l'occasione di immergerti nella storia e nella bellezza dell'eremo di Pietraspaccata. 
+              Situato in un ambiente naturale mozzafiato, l'eremo è caratterizzato da antiche architetture,
+              cappelle e paesaggi che ti trasporteranno in un'atmosfera unica. Sarà un'esperienza ricca di cultura e spiritualità, 
+              arricchita da dettagli storici e aneddoti interessanti forniti dalla guida. Sia che tu sia un appassionato di storia,
+              un amante della natura o in cerca di ispirazione, la visita all'eremo di Pietraspaccata promette di regalarti 
+              una giornata memorabile immersa nella bellezza e nella tranquillità. Non perdere l'opportunità di scoprire questo gioiello nascosto 
+              e lasciati incantare dalla sua magia.</p>
+            <button class="save-to-calendar-button">Salva sul Calendario</button>
+        </div>
+    </div>    
 <script defer src="/src/js/material.min.js"></script>
 <script src="/src/js/promise.js"></script>
 <script src="/src/js/fetch.js"></script>
 <script src="/src/js/app.js"></script>
-<script src="/path/to/events.js"></script>
+<script src="/src/js/events.js"></script>
 </body>
 </html>
