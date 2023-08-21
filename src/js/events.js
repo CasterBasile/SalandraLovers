@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
     const eventModal = document.getElementById("eventModal");
     const closeModal = document.querySelector(".close-modal");
-    const openModalButtons = document.querySelectorAll(".banner-link.open-modal");
+    const openModalButtons = document.querySelectorAll(".banner-link");
+    const setNotificationButtons = document.querySelectorAll(".set-notification");
 
     openModalButtons.forEach(button => {
         button.addEventListener("click", function() {
@@ -19,25 +20,24 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    const saveToCalendarButton = document.querySelector(".save-to-calendar-button");
-    saveToCalendarButton.addEventListener("click", function() {
-        const eventDetails = {
-            title: "Visita all'eremo di Pietraspaccata",
-            description: "Visita all'eremo",
-            location: "Bosco della Salandra",
-            start: [2023, 9, 20, 9, 30], // [anno, mese (da 0 a 11), giorno, ora, minuti]
-            end: [2023, 9, 20, 12, 0] // [anno, mese (da 0 a 11), giorno, ora, minuti]
-        };
+    setNotificationButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            // Invia una notifica 2 ore prima dell'evento
+            const eventTitle = "Visita all'eremo di Pietraspaccata"; // Titolo dell'evento
+            const eventDate = new Date("2023-08-22T00:02:00"); // Imposta la data e l'ora dell'evento
+            const notificationTime = new Date(eventDate.getTime() - 2 * 60 * 60 * 1000); // Sottrai 2 ore dalla data dell'evento
+            const options = {
+                body: `L'evento "${eventTitle}" inizia tra 2 ore!`,
+                icon: "/src/images/notification-icon.png" // Imposta l'icona della notifica
+            };
 
-        const cal = ics();
-        cal.addEvent(
-            eventDetails.title,
-            eventDetails.description,
-            eventDetails.location,
-            eventDetails.start,
-            eventDetails.end
-        );
-
-        cal.download();
+            // Richiede l'autorizzazione alle notifiche
+            Notification.requestPermission().then(permission => {
+                if (permission === "granted") {
+                    // Crea e mostra la notifica
+                    const notification = new Notification("Avviso Evento", options);
+                }
+            });
+        });
     });
 });
