@@ -259,8 +259,10 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
+  background-color: #943126;
+  color: white;
   padding: 20px;
+  border: 2px solid #196F3D; /* Colore del bordo verde */
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   max-width: 80%;
@@ -268,22 +270,30 @@ body {
   overflow-y: auto; /* Aggiungi questa regola per rendere il contenuto scorrevole */
 }
 
+/* Cambia il colore di sfondo e il colore del testo del tasto "Scopri di più" */
+.modal-content button {
+  background-color: #c72715; /* Colore di sfondo del tasto */
+  color: white; /* Colore del testo del tasto */
+  border: 2px solid #196F3D; /* Aggiungi bordino verde al tasto */
+  padding: 10px 20px;
+  font-size: 16px; /* Dimensione del testo */
+  cursor: pointer;
+  margin: auto; /* Centra orizzontalmente */
+  display: block; /* Imposta il display a blocco per centrare */
+  /* Aggiungi altre proprietà CSS come bordi, ombra, ecc. se necessario */
+}
+
+/* Cambia lo stile del tasto al passaggio del mouse */
+.modal-content button:hover {
+  background-color: #45a049; /* Cambia il colore di sfondo al passaggio del mouse */
+}
+
+
 .close-modal {
   position: absolute;
   top: 10px;
   right: 15px;
   font-size: 20px;
-  cursor: pointer;
-}
-
-.save-to-calendar-button {
-  display: block;
-  margin-top: 20px;
-  padding: 10px 15px;
-  background-color: #196F3D;
-  color: white;
-  border: none;
-  border-radius: 5px;
   cursor: pointer;
 }
 

@@ -18,26 +18,20 @@ document.addEventListener("DOMContentLoaded", function() {
             eventModal.style.display = "none";
         }
     });
+});
 
-    const saveToCalendarButton = document.querySelector(".save-to-calendar-button");
-    saveToCalendarButton.addEventListener("click", function() {
-        const eventDetails = {
-            title: "Visita all'eremo di Pietraspaccata",
-            description: "Visita all'eremo",
-            location: "Bosco della Salandra",
-            start: [2023, 9, 20, 9, 30], // [anno, mese (da 0 a 11), giorno, ora, minuti]
-            end: [2023, 9, 20, 12, 0] // [anno, mese (da 0 a 11), giorno, ora, minuti]
-        };
-
-        const cal = ics();
-        cal.addEvent(
-            eventDetails.title,
-            eventDetails.description,
-            eventDetails.location,
-            eventDetails.start,
-            eventDetails.end
-        );
-
-        cal.download();
+document.addEventListener("DOMContentLoaded", function() {
+    const openLinkButton = document.querySelector(".open-link-button");
+    
+    openLinkButton.addEventListener("click", function() {
+        // Inserisci qui l'URL del link a cui vuoi indirizzare
+        const linkUrl = "https://www.facebook.com/groups/950471052240086/events";
+        
+        // Apri il link nella stessa finestra/ scheda
+        window.location.href = linkUrl;
+        
+        // Se preferisci aprire il link in una nuova finestra/ scheda, usa la seguente riga:
+        // window.open(linkUrl, "_blank");
     });
 });
+
