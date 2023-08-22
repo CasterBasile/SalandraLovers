@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
         button.addEventListener("click", function() {
             // Invia una notifica 2 ore prima dell'evento
             const eventTitle = "Visita all'eremo di Pietraspaccata"; // Titolo dell'evento
-            const eventDate = new Date("2023-08-22T00:02:00"); // Imposta la data e l'ora dell'evento
+            const eventDate = new Date("2023-09-20T09:30:00"); // Imposta la data e l'ora dell'evento
             const notificationTime = new Date(eventDate.getTime() - 2 * 60 * 60 * 1000); // Sottrai 2 ore dalla data dell'evento
             const options = {
                 body: `L'evento "${eventTitle}" inizia tra 2 ore!`,

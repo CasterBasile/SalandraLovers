@@ -64,33 +64,35 @@
         </div>
       </nav>
     </div>
-      <main class="mdl-layout__content mat-typography">
-        <h5 class="text-center mdl-color-text--primary"><b>Eventi</b></h5>
-        <p class="text-center">
-            Qui troverai i prossimi eventi nel bosco!
-        </p> 
-        <div class="banner-list">
-          <div class="banner-container">
-              <div class="banner-link open-modal" data-modal="eventModal">
-                  <div class="banner-overlay"></div>
-                  <img src="/src/images/eremo.jpg" alt="Evento 1">
-                  <div class="banner-title">Visita all'eremo di Pietraspaccata</div>
-                  <div class="banner-subtitle">20/09/2023 - 9:30</div>
-                  <button class="open-modal">Visualizza Dettagli</button>
-              </div>
+    <main class="mdl-layout__content mat-typography">
+      <h5 class="text-center mdl-color-text--primary"><b>Eventi</b></h5>
+      <p class="text-center">
+          Qui troverai i prossimi eventi nel bosco!
+      </p> 
+      <div class="event-list">
+        <div class="event-banner">
+          <div class="event-banner-overlay"></div>
+          <img src="/src/images/eremo.jpg" alt="Evento 1">
+          <div class="event-details">
+              <div class="event-title">Visita all'eremo di Pietraspaccata</div>
+              <div class="event-date-time">20/09/2023 - 9:30</div>
+              <button class="open-modal">Visualizza Dettagli</button>
           </div>
-          <!-- Altri banner simili... -->
       </div>
       
-      </main>
-      <div class="modal" id="eventModal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Visita all'eremo di Pietraspaccata</h2>
-            <p>Descrizione dell'evento.</p>
-            <button class="set-notification">Avvisami</button> <!-- Tasto "Avvisami" -->
-        </div>
+          <!-- Altri banner simili... -->
+      </div>
+  </main>
+  
+  <div class="modal" id="eventModal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Visita all'eremo di Pietraspaccata</h2>
+        <p>Descrizione dell'evento.</p>
+        <button class="set-notification">Avvisami</button> <!-- Tasto "Avvisami" -->
     </div>
+</div>
+
     
 <script defer src="/src/js/material.min.js"></script>
 <script src="/src/js/promise.js"></script>
