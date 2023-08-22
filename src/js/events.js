@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
             eventModal.style.display = "none";
         }
     });
+});
 
     setNotificationButtons.forEach(button => {
         button.addEventListener("click", function() {
@@ -40,4 +41,5 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         });
     });
-});
+
+
