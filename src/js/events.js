@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const eventModal = document.getElementById("eventModal");
     const closeModal = document.querySelector(".close-modal");
-    const openModalButtons = document.querySelectorAll(".banner-link");
-    const setNotificationButtons = document.querySelectorAll(".set-notification");
+    const openModalButtons = document.querySelectorAll(".banner-link.open-modal");
 
     openModalButtons.forEach(button => {
         button.addEventListener("click", function() {
@@ -21,25 +20,17 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-    setNotificationButtons.forEach(button => {
-        button.addEventListener("click", function() {
-            // Invia una notifica 2 ore prima dell'evento
-            const eventTitle = "Visita all'eremo di Pietraspaccata"; // Titolo dell'evento
-            const eventDate = new Date("2023-09-20T09:30:00"); // Imposta la data e l'ora dell'evento
-            const notificationTime = new Date(eventDate.getTime() - 2 * 60 * 60 * 1000); // Sottrai 2 ore dalla data dell'evento
-            const options = {
-                body: `L'evento "${eventTitle}" inizia tra 2 ore!`,
-                icon: "/src/images/notification-icon.png" // Imposta l'icona della notifica
-            };
-
-            // Richiede l'autorizzazione alle notifiche
-            Notification.requestPermission().then(permission => {
-                if (permission === "granted") {
-                    // Crea e mostra la notifica
-                    const notification = new Notification("Avviso Evento", options);
-                }
-            });
-        });
+document.addEventListener("DOMContentLoaded", function() {
+    const openLinkButton = document.querySelector(".open-link-button");
+    
+    openLinkButton.addEventListener("click", function() {
+        // Inserisci qui l'URL del link a cui vuoi indirizzare
+        const linkUrl = "https://www.facebook.com/groups/950471052240086/events";
+        
+        // Apri il link nella stessa finestra/ scheda
+        window.location.href = linkUrl;
+        
+        // Se preferisci aprire il link in una nuova finestra/ scheda, usa la seguente riga:
+        // window.open(linkUrl, "_blank");
     });
-
-
+});

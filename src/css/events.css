@@ -1,307 +1,178 @@
 .link-tile {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffffff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .link-tile:hover {
-    background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
 
 .mdl-card__title {
-    padding: 16px;
-    background-color: #f1c40f;
-    color: white;
+  padding: 16px;
+  background-color: #f1c40f;
+  color: white;
 }
 
 .mdl-card__title-text {
-    margin: 0;
+  margin: 0;
 }
 .mdl-layout__header {
-    background-color: #F1C40F;
+  background-color: #F1C40F;
 }
 
 .mdl-layout-title {
-    color: #196F3D !important; /* Cambia il colore del testo in bianco */
-    font-weight: bold; /* Rendi il testo in grassetto */
+  color: #196F3D !important; /* Cambia il colore del testo in bianco */
+  font-weight: bold; /* Rendi il testo in grassetto */
 }
 
 .mdl-layout__drawer-button {
-    color: #196F3D !important; /* Cambia il colore delle tre lineette in bianco */
+  color: #196F3D !important; /* Cambia il colore delle tre lineette in bianco */
 }
 
 body {
-    background-color: #943126 !important; /* Cambia il colore di sfondo dell'intera schermata */
+  background-color: #943126 !important; /* Cambia il colore di sfondo dell'intera schermata */
 }
 
 .center-text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
-    
+  
 .mdl-layout .mdl-button.mdl-js-button.mdl-button--fab.mdl-button--colored.custom {
-    background-color: #c72715 !important;
+  background-color: #c72715 !important;
 }
-    
+  
 body {
-    background-color: #943126;
+  background-color: #943126;
 }
 
 .mdl-layout__header {
-    background-color: #F1C40F;
+  background-color: #F1C40F;
 }
 
 .mdl-layout-title {
-    color: #196F3D;
-    font-weight: bold;
+  color: #196F3D;
+  font-weight: bold;
 }
-    
+  
 /* Imposta il colore del testo in bianco */
 .mdl-layout__content * {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .mdl-layout__drawer-button .material-icons {
-    color: #196F3D !important;
+  color: #196F3D !important;
 }
-    
+  
 /* Aggiunge il bordo al pulsante custom */
 .custom {
-    border: 2px solid #196F3D;
+  border: 2px solid #196F3D;
+}
+  
+.mdl-layout__drawer {
+  background-color: #F1C40F; /* Cambia il colore di sfondo del menu laterale a giallo */
 }
     
-.mdl-layout__drawer {
-    background-color: #F1C40F; /* Cambia il colore di sfondo del menu laterale a giallo */
-}
-      
 .enable-notifications {
-    background-color: #c72715 !important; /* Cambia il colore di sfondo del pulsante a un rosso più scuro */
-    color: #fff; /* Cambia il colore del testo del pulsante a bianco */
-    border: 3px solid #196F3D; /* Aggiunge un bordino di colore #196F3D */
+  background-color: #c72715 !important; /* Cambia il colore di sfondo del pulsante a un rosso più scuro */
+  color: #fff; /* Cambia il colore del testo del pulsante a bianco */
+  border: 3px solid #196F3D; /* Aggiunge un bordino di colore #196F3D */
 }
-      
-      
+    
+    
 /* Aggiunge il bordo intorno alle lettere del titolo h3 */
 .mdl-cell.mdl-cell--12-col.text-center h3 {
-    color: #196F3D; /* Colore del testo */
-    font-weight: bold; /* Testo in grassetto */
-    text-shadow: -1px -1px 0 #196F3D, 1px -1px 0 #196F3D, -1px 1px 0 #196F3D, 1px 1px 0 #196F3D;
+  color: #196F3D; /* Colore del testo */
+  font-weight: bold; /* Testo in grassetto */
+  text-shadow: -1px -1px 0 #196F3D, 1px -1px 0 #196F3D, -1px 1px 0 #196F3D, 1px 1px 0 #196F3D;
 }
-    
+  
 /* Rendere tutte le scritte  del menù in grassetto */
 .mdl-layout-title, .mdl-navigation__link{
-    font-weight: bold;
-    color: #196F3D !important;
+  font-weight: bold;
+  color: #196F3D !important;
 }
 
 .news-description {
-    margin-top: 20px; /* Aggiungi un margine superiore per separare il paragrafo dall'intestazione */
+  margin-top: 20px; /* Aggiungi un margine superiore per separare il paragrafo dall'intestazione */
 }
 
 /* Aggiungi questa regola per rendere i bottoni più lunghi */
 .mdl-button {
-    height: 38px; /* Regola l'altezza del pulsante come desiderato */
-    width: 200px; /* Regola la larghezza del pulsante come desiderato */
-    font-size: 16px; /* Opzionale: regola la dimensione del testo del pulsante */
+  height: 38px; /* Regola l'altezza del pulsante come desiderato */
+  width: 200px; /* Regola la larghezza del pulsante come desiderato */
+  font-size: 16px; /* Opzionale: regola la dimensione del testo del pulsante */
 }
-   
+ 
 .link-tile {
-    width: 100%;
-    height: 250%; /* Aumenta l'altezza per coprire l'intero contenuto */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-    transition: background 0.5s ease; /* Riduci la durata della transizione */
-    color: white;
-    text-decoration: none;
+  width: 100%;
+  height: 250%; /* Aumenta l'altezza per coprire l'intero contenuto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: background 0.5s ease; /* Riduci la durata della transizione */
+  color: white;
+  text-decoration: none;
 }
 
 .link-tile:hover {
-    background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .link-title {
-    background-color: rgba(0, 0, 0, 0.43);
-    padding: 16px 32px;
-    font-size: 18px;
-    text-align: center;
-    width: 100%;
-    height: 76%;
+  background-color: rgba(0, 0, 0, 0.43);
+  padding: 16px 32px;
+  font-size: 18px;
+  text-align: center;
+  width: 100%;
+  height: 76%;
 }
 
 /* Aggiungi questa regola per aggiungere spazio tra i bottoni nella griglia */
 .mdl-cell {
-    margin-bottom: 70px; /* Aggiungi margine inferiore tra i bottoni */
+  margin-bottom: 70px; /* Aggiungi margine inferiore tra i bottoni */
 }
 
 
-  .text-center {
-    text-align: center; /* Centra il testo orizzontalmente */
-  }
-  
-  .text-center.mdl-color-text--primary b {
-    position: relative;
-    display: inline-block;
-    font-weight: bold;
-  }
-  
-  .text-center.mdl-color-text--primary b span {
-    display: inline-block;
-    position: relative;
-  }
-  
-  .text-center.mdl-color-text--primary b {
-    display: inline-block;
-    font-weight: bold;
-    color: white; /* Imposta il colore del testo a bianco */
-    text-shadow:
-      -1px -1px 0 #196F3D, /* Bordino verde in alto a sinistra */
-      1px -1px 0 #196F3D, /* Bordino verde in alto a destra */
-      -1px 1px 0 #196F3D, /* Bordino verde in basso a sinistra */
-      1px 1px 0 #196F3D; /* Bordino verde in basso a destra */
-  }
-
-  .banner-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+.text-center {
+  text-align: center; /* Centra il testo orizzontalmente */
 }
 
-
-.banner-container {
+.text-center.mdl-color-text--primary b {
   position: relative;
-  width: 300px;
-  height: 150px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: transform 0.2s ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
+  font-weight: bold;
 }
 
-.banner-link img {
-  max-width: 100%;
-  max-height: 100%;
-  margin: auto; /* Aggiunto per centrare l'immagine */
-  transition: transform 0.2s ease-in-out;
+.text-center.mdl-color-text--primary b span {
+  display: inline-block;
+  position: relative;
 }
 
-.banner-title {
-  position: absolute;
-  top: 50%; /* Posiziona il titolo al centro verticale */
-  left: 50%; /* Posiziona il titolo al centro orizzontale */
-  transform: translate(-50%, -50%); /* Centra il titolo correttamente */
-  text-align: center;
-  width: 100%;
-  color: white;
-  font-size: 18px;
-  z-index: 1; /* Posiziona il titolo sopra l'immagine e l'overlay */
+.text-center.mdl-color-text--primary b {
+  display: inline-block;
+  font-weight: bold;
+  color: white; /* Imposta il colore del testo a bianco */
+  text-shadow:
+    -1px -1px 0 #196F3D, /* Bordino verde in alto a sinistra */
+    1px -1px 0 #196F3D, /* Bordino verde in alto a destra */
+    -1px 1px 0 #196F3D, /* Bordino verde in basso a sinistra */
+    1px 1px 0 #196F3D; /* Bordino verde in basso a destra */
 }
 
-.banner-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Opacità nera */
-  opacity: 1; /* Imposta l'opacità a 1 in modo che sia sempre visibile */
-  transition: opacity 0.2s ease-in-out;
-}
-
-
-.banner-container:hover .banner-overlay {
-  opacity: 1;
-}
-
-.banner-subtitle {
-  position: absolute;
-  top: 70%; /* Regola la posizione verticale del sottotitolo */
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  width: 100%;
-  color: white;
-  font-size: 14px;
-  z-index: 1;
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1000;
-}
-
-.modal-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #943126;
-  color: white;
-  padding: 20px;
-  border: 2px solid #196F3D; /* Colore del bordo verde */
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  max-width: 80%;
-  max-height: 80%;
-  overflow-y: auto; /* Aggiungi questa regola per rendere il contenuto scorrevole */
-}
-
-/* Cambia il colore di sfondo e il colore del testo del tasto "Scopri di più" */
-.modal-content button {
-  background-color: #c72715; /* Colore di sfondo del tasto */
-  color: white; /* Colore del testo del tasto */
-  border: 2px solid #196F3D; /* Aggiungi bordino verde al tasto */
-  padding: 10px 20px;
-  font-size: 16px; /* Dimensione del testo */
-  cursor: pointer;
-  margin: auto; /* Centra orizzontalmente */
-  display: block; /* Imposta il display a blocco per centrare */
-  /* Aggiungi altre proprietà CSS come bordi, ombra, ecc. se necessario */
-}
-
-/* Cambia lo stile del tasto al passaggio del mouse */
-.modal-content button:hover {
-  background-color: #45a049; /* Cambia il colore di sfondo al passaggio del mouse */
-}
-
-
-.close-modal {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.open-modal {
-  cursor: pointer;
-}
-
-.event-list {
+.banner-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -309,51 +180,123 @@ body {
   margin-top: 20px;
 }
 
-.event-banner {
-  position: relative;
-  width: 300px;
-  height: 150px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: transform 0.2s ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+.banner-container {
+position: relative;
+width: 300px;
+height: 150px;
+margin-right: 20px;
+margin-bottom: 20px;
+border: 1px solid #ddd;
+border-radius: 10px;
+overflow: hidden;
+transition: transform 0.2s ease-in-out;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
-.event-banner img {
-  max-width: 100%;
-  max-height: 100%;
-  margin: auto; /* Aggiunto per centrare l'immagine */
-  transition: transform 0.2s ease-in-out;
+.banner-link img {
+max-width: 100%;
+max-height: 100%;
+margin: auto; /* Aggiunto per centrare l'immagine */
+transition: transform 0.2s ease-in-out;
 }
 
-.event-title {
-  position: absolute;
-  top: 50%; /* Posiziona il titolo al centro verticale */
-  left: 50%; /* Posiziona il titolo al centro orizzontale */
-  transform: translate(-50%, -50%); /* Centra il titolo correttamente */
-  text-align: center;
-  width: 100%;
-  color: white;
-  font-size: 18px;
-  z-index: 1; /* Posiziona il titolo sopra l'immagine e l'overlay */
+.banner-title {
+position: absolute;
+top: 50%; /* Posiziona il titolo al centro verticale */
+left: 50%; /* Posiziona il titolo al centro orizzontale */
+transform: translate(-50%, -50%); /* Centra il titolo correttamente */
+text-align: center;
+width: 100%;
+color: white;
+font-size: 18px;
+z-index: 1; /* Posiziona il titolo sopra l'immagine e l'overlay */
 }
 
-.event-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Opacità nera */
-  opacity: 0; /* Opacità iniziale 0 */
-  transition: opacity 0.2s ease-in-out;
+.banner-overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5); /* Opacità nera */
+opacity: 1; /* Imposta l'opacità a 1 in modo che sia sempre visibile */
+transition: opacity 0.2s ease-in-out;
 }
 
-.event-banner:hover .event-overlay {
-  opacity: 1; /* Opacità al passaggio del mouse */
+
+.banner-container:hover .banner-overlay {
+opacity: 1;
+}
+
+.banner-subtitle {
+position: absolute;
+top: 70%; /* Regola la posizione verticale del sottotitolo */
+left: 50%;
+transform: translateX(-50%);
+text-align: center;
+width: 100%;
+color: white;
+font-size: 14px;
+z-index: 1;
+}
+
+.modal {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.7);
+z-index: 1000;
+}
+
+.modal-content {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background-color: #943126;
+color: white;
+padding: 20px;
+border: 2px solid #196F3D; /* Colore del bordo verde */
+border-radius: 5px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+max-width: 80%;
+max-height: 80%;
+overflow-y: auto; /* Aggiungi questa regola per rendere il contenuto scorrevole */
+}
+
+/* Cambia il colore di sfondo e il colore del testo del tasto "Scopri di più" */
+.modal-content button {
+background-color: #c72715; /* Colore di sfondo del tasto */
+color: white; /* Colore del testo del tasto */
+border: 2px solid #196F3D; /* Aggiungi bordino verde al tasto */
+padding: 10px 20px;
+font-size: 16px; /* Dimensione del testo */
+cursor: pointer;
+margin: auto; /* Centra orizzontalmente */
+display: block; /* Imposta il display a blocco per centrare */
+/* Aggiungi altre proprietà CSS come bordi, ombra, ecc. se necessario */
+}
+
+/* Cambia lo stile del tasto al passaggio del mouse */
+.modal-content button:hover {
+background-color: #45a049; /* Cambia il colore di sfondo al passaggio del mouse */
+}
+
+
+.close-modal {
+position: absolute;
+top: 10px;
+right: 15px;
+font-size: 20px;
+cursor: pointer;
+}
+
+.open-modal {
+cursor: pointer;
 }
