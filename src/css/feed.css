@@ -114,3 +114,8 @@
   border: none;
   cursor: pointer;
 }
+
+.app-logo {
+  display: block; /* Assicura che l'immagine sia considerata come un elemento blocco */
+  margin: 0 auto; /* Imposta i margini automaticamente per centrare l'immagine orizzontalmente */
+}
