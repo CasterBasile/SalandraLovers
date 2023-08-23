@@ -29,20 +29,29 @@
   <link rel="apple-touch-icon" href="/src/images/icons/app-icon-180x180.png" sizes="180x180">
 </head>
 <body>
-
-<div id="app">
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <header class="mdl-layout__header">
-      
-      <div class="mdl-layout__header-row">
-        <!-- Title -->
+  <div id="app">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Salandra Lovers</span>
+          <div class="mdl-layout-spacer"></div>
+          <nav class="mdl-navigation mdl-layout--large-screen-only">
+            <a class="mdl-navigation__link" href="/">Feed</a>
+            <a class="mdl-navigation__link" href="/settings">Impostazioni</a>
+            <div class="drawer-option">
+              <button class="enable-notifications mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent">
+                Attiva Notifiche
+              </button>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">Salandra Lovers</span>
-        <!-- Add spacer, to align navigation to the right -->
-        <div class="mdl-layout-spacer"></div>
-        <!-- Navigation. We hide it in small screens. -->
-        <nav class="mdl-navigation mdl-layout--large-screen-only">
-          <a class="mdl-navigation__link" href="/">Feed</a>
-          <a class="mdl-navigation__link" href="/settings">Impostazioni</a>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="/">Home</a>
+          <a class="mdl-navigation__link" href="/news">News</a>
+          <a class="mdl-navigation__link" href="/help">Aiuto</a>
           <div class="drawer-option">
             <button class="enable-notifications mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent">
               Attiva Notifiche
@@ -50,20 +59,6 @@
           </div>
         </nav>
       </div>
-    </header>
-    <div class="mdl-layout__drawer">
-      <span class="mdl-layout-title">Salandra Lovers</span>
-      <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="/">Home</a>
-        <a class="mdl-navigation__link" href="/news">News</a>
-        <a class="mdl-navigation__link" href="/help">Aiuto</a>
-        <div class="drawer-option">
-          <button class="enable-notifications mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent">
-            Attiva Notifiche
-          </button>
-        </div>
-      </nav>
-    </div>
       <main class="mdl-layout__content mat-typography">
         <h5 class="text-center mdl-color-text--primary"><b>Eventi</b></h5>
         <p class="text-center">
@@ -71,17 +66,9 @@
         </p> 
         <div class="banner-list">
           <div class="banner-container">
-              <div class="banner-link open-modal" data-modal="eventModal">
-                  <div class="banner-overlay"></div>
-                  <img src="/src/images/eremo.jpg" alt="Evento 1">
-                  <div class="banner-title">Visita all'eremo di Pietraspaccata</div>
-                  <div class="banner-subtitle">20/09/2023 - 9:30</div>
-                  <button class="open-modal">Visualizza Dettagli</button>
-              </div>
+            <!-- I banner verranno aggiunti qui dinamicamente -->
           </div>
-          <!-- Altri banner simili... -->
-      </div>
-      
+        </div>
       </main>
       <div class="modal" id="eventModal">
         <div class="modal-content">
@@ -94,11 +81,13 @@
             </p>
             <button class="open-link-button">Scopri di più</button>
         </div>
-    </div>    
-<script defer src="/src/js/material.min.js"></script>
-<script src="/src/js/promise.js"></script>
-<script src="/src/js/fetch.js"></script>
-<script src="/src/js/app.js"></script>
-<script src="/src/js/events.js"></script>
+      </div>    
+    </div>
+    <script defer src="/src/js/material.min.js"></script>
+    <script src="/src/js/promise.js"></script>
+    <script src="/src/js/fetch.js"></script>
+    <script src="/src/js/app.js"></script>
+    <script src="/src/js/events.js"></script>
+  </div>
 </body>
 </html>

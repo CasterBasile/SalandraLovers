@@ -182,18 +182,16 @@ body {
 
 
 .banner-container {
-position: relative;
-width: 300px;
-height: 150px;
-margin-right: 20px;
-margin-bottom: 20px;
-border: 1px solid #ddd;
-border-radius: 10px;
-overflow: hidden;
-transition: transform 0.2s ease-in-out;
-display: flex;
-justify-content: center;
-align-items: center;
+  position: relative;
+  width: 300px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+  /* display: flex; <-- Rimuovi questa riga */
+  /* justify-content: center; <-- Rimuovi questa riga */
+  display: block; /* Aggiungi questa riga */
 }
 
 .banner-link img {
@@ -300,3 +298,4 @@ cursor: pointer;
 .open-modal {
 cursor: pointer;
 }
+
