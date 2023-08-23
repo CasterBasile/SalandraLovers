@@ -231,7 +231,7 @@ opacity: 1;
 
 .banner-subtitle {
 position: absolute;
-top: 70%; /* Regola la posizione verticale del sottotitolo */
+top: 65%; /* Regola la posizione verticale del sottotitolo */
 left: 50%;
 transform: translateX(-50%);
 text-align: center;
@@ -239,6 +239,18 @@ width: 100%;
 color: white;
 font-size: 14px;
 z-index: 1;
+}
+
+.banner-place {
+  position: absolute;
+  bottom: 10px; /* Posiziona il testo a 10px dalla parte inferiore */
+  left: 50%;
+  transform: translateX(-50%); /* Centra orizzontalmente */
+  font-size: 14px;
+  color: white;
+  z-index: 2;
+  width: 100%; /* Fai in modo che il testo occupi l'intera larghezza del banner */
+  text-align: center; /* Centra il testo all'interno del banner */
 }
 
 .modal {
@@ -253,20 +265,23 @@ z-index: 1000;
 }
 
 .modal-content {
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-background-color: #943126;
-color: white;
-padding: 20px;
-border: 2px solid #196F3D; /* Colore del bordo verde */
-border-radius: 5px;
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-max-width: 80%;
-max-height: 80%;
-overflow-y: auto; /* Aggiungi questa regola per rendere il contenuto scorrevole */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #943126;
+  color: white;
+  padding: 20px;
+  border: 2px solid #196F3D;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  max-width: 80%;
+  max-height: 80%;
+  overflow-y: auto;
+  width: 80%; /* Imposta la larghezza desiderata */
+  height: auto; /* Imposta l'altezza desiderata */
 }
+
 
 /* Cambia il colore di sfondo e il colore del testo del tasto "Scopri di più" */
 .modal-content button {

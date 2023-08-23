@@ -1,15 +1,17 @@
 document.addEventListener("DOMContentLoaded", function() {
     const eventModal = document.getElementById("eventModal");
     const closeModal = document.querySelector(".close-modal");
-    const bannerContainer = document.querySelector(".banner-container");
+    const eventTitle = document.getElementById("eventTitle");
+    const eventDescription = document.getElementById("eventDescription");
+    const eventLinkButton = document.getElementById("eventLinkButton");
+    const bannerContainer = document.querySelector(".banner-container"); // Aggiunto qui
 
-    // Recupera i dati dei banner da Firebase usando fetch
     fetch("https://salandra-lovers-default-rtdb.firebaseio.com/events.json")
       .then(response => response.json())
-      .then(bannersData => {
-        for (const eventId in bannersData) {
-          const bannerData = bannersData[eventId];
-          createBannerElement(bannerData);
+      .then(eventsData => {
+        for (const eventId in eventsData) {
+          const eventData = eventsData[eventId];
+          createBannerElement(eventData);
         }
       })
       .catch(error => {
@@ -26,23 +28,31 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Funzione per creare elementi banner
-    function createBannerElement(bannerData) {
+    function createBannerElement(eventData) {
         const bannerElement = document.createElement('div');
-        bannerElement.className = 'banner-container'; // <-- Cambiato il nome della classe
+        bannerElement.className = 'banner-container';
         bannerElement.innerHTML = `
-            <div class="banner-link open-modal" data-modal="eventModal">
-                <div class="banner-overlay"></div>
-                <img src="${bannerData.image}" alt="${bannerData.title}">
-                <div class="banner-title">${bannerData.title}</div>
-                <div class="banner-subtitle">${bannerData.date} - ${bannerData.time}</div>
-            </div>
+          <div class="banner-link open-modal" data-modal="eventModal">
+            <div class="banner-overlay"></div>
+            <img src="${eventData.image}" alt="${eventData.title}">
+            <div class="banner-title">${eventData.title}</div>
+            <div class="banner-place">Luogo: ${eventData.place}</div> <!-- Mostra il luogo sotto al titolo -->
+            <div class="banner-subtitle">${eventData.date} - ${eventData.time}</div>
+          </div>
         `;
-        bannerContainer.appendChild(bannerElement);
-
         const bannerLink = bannerElement.querySelector(".banner-link");
         bannerLink.addEventListener("click", function() {
+            eventTitle.textContent = eventData.title;
+            eventDescription.textContent = eventData.description;
+            eventLinkButton.setAttribute("data-link", eventData.link);
             eventModal.style.display = "block";
         });
+
+        bannerContainer.appendChild(bannerElement);
     }
+
+    eventLinkButton.addEventListener("click", function() {
+        const link = eventLinkButton.getAttribute("data-link");
+        window.open(link, "_blank");
+    });
 });
