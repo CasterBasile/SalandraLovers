@@ -4,24 +4,24 @@ var sharedMomentsArea = document.querySelector('#shared-moments');
 var imageModal = document.getElementById('image-modal');
 var imageModalImage = document.getElementById('image-modal-image');
 
+
+var shareImageButton = document.querySelector('#share-image-button');
+var createPostModal = document.querySelector('#create-post-modal');
+var closeCreatePostModalBtn = document.querySelector('.close'); // Seleziona il bottone di chiusura all'interno della finestra modale
+
 function openCreatePostModal() {
-  createPostArea.style.display = 'block';
-  if (deferredPrompt) {
-    deferredPrompt.prompt();
-
-    deferredPrompt.userChoice.then(function(choiceResult) {
-      console.log(choiceResult.outcome);
-
-      if (choiceResult.outcome === 'dismissed') {
-        console.log('User cancelled installation');
-      } else {
-        console.log('User added to home screen');
-      }
-    });
-
-    deferredPrompt = null;
-  }
+  createPostModal.style.display = 'flex'; // Usa 'flex' per centrare la finestra modale
 }
+
+function closeCreatePostModal() {
+  createPostModal.style.display = 'none';
+}
+
+shareImageButton.addEventListener('click', openCreatePostModal);
+closeCreatePostModalBtn.addEventListener('click', closeCreatePostModal);
+
+shareImageButton.addEventListener('click', openCreatePostModal);
+closeCreatePostModalBtn.addEventListener('click', closeCreatePostModal);
 
 function closeCreatePostModal() {
   createPostArea.style.display = 'none';
@@ -59,28 +59,30 @@ function clearCards() {
 function createCard(data) {
   var cardWrapper = document.createElement('div');
   cardWrapper.className = 'shared-moment-card mdl-card mdl-shadow--2dp';
+
   var cardTitle = document.createElement('div');
   cardTitle.className = 'mdl-card__title';
   cardTitle.style.backgroundImage = 'url(' + data.image + ')';
   cardTitle.style.backgroundSize = 'cover';
   cardTitle.style.height = '180px';
+
   cardWrapper.appendChild(cardTitle);
-  var cardTitleTextElement = document.createElement('h2');
-  cardTitleTextElement.style.color = 'white';
-  cardTitleTextElement.className = 'mdl-card__title-text';
-  cardTitleTextElement.textContent = data.title;
-  cardTitle.appendChild(cardTitleTextElement);
+
   var cardSupportingText = document.createElement('div');
   cardSupportingText.className = 'mdl-card__supporting-text';
-  cardSupportingText.textContent = data.location;
-  cardSupportingText.style.textAlign = 'center';
+  cardSupportingText.textContent = data.post;
+  cardSupportingText.style.textAlign = 'left';
+  cardSupportingText.style.paddingBottom = '10px'; // Aggiungi padding inferiore
   cardWrapper.appendChild(cardSupportingText);
+
   cardWrapper.addEventListener('click', function () {
-    openImageModal(data.image);
+    window.open(data.link, '_blank');
   });
+
   componentHandler.upgradeElement(cardWrapper);
   sharedMomentsArea.appendChild(cardWrapper);
 }
+
 
 function updateUI(data) {
   clearCards();
@@ -143,3 +145,22 @@ function changeBackgroundImage() {
 
 changeBackgroundImage();
 
+var closeCreatePostModalBtn = document.getElementById('close-create-post-modal-btn');
+
+closeCreatePostModalBtn.addEventListener('click', closeCreatePostModal);
+
+function closeCreatePostModal() {
+  createPostModal.style.display = 'none';
+}
+
+var createPostModalOverlay = document.getElementById('create-post-modal-overlay');
+
+createPostModalOverlay.addEventListener('click', function(event) {
+  if (event.target === createPostModalOverlay) {
+    closeCreatePostModal();
+  }
+});
+
+function openWebPage() {
+  window.open("https://www.instagram.com/", "_blank"); // Cambia l'URL con quello desiderato
+}

@@ -70,35 +70,37 @@
         </nav>
       </div>
       <main class="mdl-layout__content mat-typography">
-        <div id="create-post">
-          <form>
-            <div class="input-section mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <input class="mdl-textfield__input" type="text" id="title">
-              <label class="mdl-textfield__label" for="title" name="title">Descrizione</label>
+        <div id="app">
+          <!-- ... il resto del codice rimane invariato ... -->
+        
+          <!-- Aggiungi questa parte per la finestra modale -->
+          <div id="create-post-modal" class="modal">
+            <div class="modal-content">
+              <span id="close-create-post-modal-btn" class="close">&times;</span>
+              <h2>Aggiungi anche tu un post!</h2>
+              <p>Unisciti alla community di Salandra Lovers e condividi le tue avventure nel bosco con il mondo intero!</p>
+              <ul>
+                <li>
+                  <b>Scatta una foto</b>
+                  <p>Cattura la bellezza che ti circonda con il tuo obiettivo!<br>Ogni immagine racconta una storia unica, vogliamo vedere la tua! </p>
+                </li>
+                <li>
+                  <b>Condividi una storia su instagram</b>
+                  <p>Condividi una storia sul tuo profilo Instagram e taggaci. Utilizza il tag <b>@salandralovers</b>.</p>
+                </li>
+              </ul>
+              <p><br></p>
+              <button id="igButton" onclick="openWebPage()">Apri Instagram</button>
             </div>
-            <div class="input-section mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="manual-location">
-              <input class="mdl-textfield__input" type="text" id="location">
-              <label class="mdl-textfield__label" for="location" name="location">Posizione</label>
-            </div>
-            <br>
-            <div>
-              <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="background-color: #c72715; border: 2px solid #196F3D;"
-              type="submit" id="post-btn">Condividi
-      </button>    
-            </div>
-            <br>
-            <div>
-              <button class="mdl-button mdl-js-button mdl-button--fab" id="close-create-post-modal-btn" type="button">
-                <i class="material-icons">close</i>
-              </button>
-            </div>
-          </form>
+          </div>
         </div>
+        
         <img src="/src/images/main-image.jpg"
              alt="Explore the City"
              class="main-image">
         <div class="page-content">
-          <h5 class="text-center mdl-color-text--primary"><b>Condividi i tuoi momenti nel bosco!</b></h5>
+          <h5 class="text-center mdl-color-text--primary"><b>Galleria fotografica</b></h5>
+          <p id="description">Benvenuto nella Galleria Fotografica: Scopri anteprime avvincenti dei post su Instagram. Per immergerti completamente nei contenuti, clicca sulle foto e sarai portato direttamente ai post completi su Instagram</p>
           <div id="shared-moments"></div>
         </div>
         <div class="floating-button">
