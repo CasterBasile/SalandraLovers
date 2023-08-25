@@ -172,4 +172,18 @@ body {
       1px 1px 0 #196F3D; /* Bordino verde in basso a destra */
   }
 
+  .sidebar {
+    width: 250px; /* Larghezza del menu laterale */
+    /* Altri stili per il menu laterale */
+  }
+  
+  .mdl-navigation__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px; /* Altezza desiderata per ogni link */
+    text-decoration: none; /* Rimuovi la sottolineatura dei link */
+    color: black; /* Cambia il colore del testo se necessario */
+    margin-left: -15px; /* Metà della larghezza degli elementi */
+  }
   

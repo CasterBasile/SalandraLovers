@@ -318,3 +318,9 @@ cursor: pointer;
   display: block; /* Assicura che l'immagine sia considerata come un elemento blocco */
   margin: 0 auto; /* Imposta i margini automaticamente per centrare l'immagine orizzontalmente */
 }
+
+.modal-content img {
+  max-width: 100%; /* Imposta la larghezza massima dell'immagine al 100% del suo contenitore */
+  height: auto; /* Imposta l'altezza automaticamente in base alla larghezza */
+}
+

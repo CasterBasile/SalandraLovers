@@ -8,16 +8,16 @@ document.addEventListener("DOMContentLoaded", function() {
   
     const eventDataArray = [
       {
-        title: "Storia del Bosco della Salandra",
+        title: "Bosco della Salandra",
         image: "/src/images/poiImages/poiBosco.jpg",
         description: "Descrizione dell'evento 1",
         subtitle: "dagli albori ad oggi",
         link: "link-evento-1"
       },
       {
-        title: "Storia dell'eremo di Pietraspaccata",
+        title: "Eremo di Pietraspaccata",
         image: "/src/images/poiImages/poiEremo.jpg",
-        description: "Descrizione dell'evento 1",
+        description: "L'eremo semirupestre di Santa Maria Pietra Spaccata è un sito archeologico e architettonico unico situato a Marano di Napoli, in Campania. Questo complesso è parzialmente scavato nella parete di un profondo solco idrografico che si estende dalla collina di Camaldoli al fondo del cratere di Quarto, con dislivelli di oltre cento metri. Le grotte dell'eremo si sviluppano su più livelli e sembrano risalire al periodo neolitico, come indicato da reperti di utensili litici rinvenuti sul posto. L'eremo era probabilmente una tappa essenziale per i pastori durante la transumanza, grazie alla sua posizione lungo un antico tratturo osco-sannita. In epoca romana, le grotte furono integrate in una struttura sovrastante che aveva funzioni di mitreo e ninfeo, di cui sono ancora visibili resti significativi. Il costone tufaceo è stato abilmente scolpito per raccogliere l'acqua piovana e sorgiva in cisterne. Nel corso dei secoli, l'eremo è stato oggetto di diverse trasformazioni. Nel tardo Cinquecento, una torre eremitica fu aggiunta per inglobare le grotte. Nel corso del tempo, ha ospitato vari eremiti, monaci basiliani, frati francescani, gesuiti e altri. Nel XIX secolo, cadde in uno stato di abbandono. L'eremo semirupestre di Santa Maria Pietra Spaccata si rivela come un luogo intriso di magia e mistero, un gioiello nascosto nel cuore di Marano.",
         subtitle: "Un luogo di pace e tranquillità",
         link: "link-evento-1"
       },
@@ -56,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
       bannerElement.addEventListener("click", function() {
         eventTitle.textContent = eventData.title;
         eventDescription.textContent = eventData.description;
+        eventImage.src = eventData.image; // Imposta l'URL dell'immagine
         eventLinkButton.setAttribute("data-link", eventData.link);
         eventModal.style.display = "block";
       });
