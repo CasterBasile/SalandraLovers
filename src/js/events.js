@@ -9,7 +9,10 @@ document.addEventListener("DOMContentLoaded", function() {
     fetch("https://salandra-lovers-default-rtdb.firebaseio.com/events.json?timestamp=" + Date.now())
     .then(response => response.json())
     .then(eventsData => {
-      // Resto del tuo codice per la gestione degli eventi
+      for (const eventId in eventsData) {
+        const eventData = eventsData[eventId];
+        createBannerElement(eventData);
+      }
     })
     .catch(error => {
       console.error('Errore durante il recupero dei dati da Firebase:', error);
