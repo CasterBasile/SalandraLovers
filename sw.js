@@ -129,3 +129,26 @@ self.addEventListener('fetch', function (event) {
     );
   }
 });
+
+self.addEventListener('fetch', function (event) {
+  var url = 'https://salandra-lovers-default-rtdb.firebaseio.com/events.json';
+  
+  if (event.request.url === url) {
+    event.respondWith(fetch(event.request)
+      .then(function (res) {
+        var clonedRes = res.clone();
+        clearAllData('events') // Assuming you have a function for clearing events data
+          .then(function () {
+            return clonedRes.json();
+          })
+          .then(function (data) {
+            for (var key in data) {
+              writeData('events', data[key]) // Assuming you have a function for writing events data
+            }
+          });
+        return res;
+      })
+    );
+  }
+  // Rest of your fetch logic...
+});
