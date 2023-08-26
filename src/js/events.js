@@ -6,17 +6,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const eventLinkButton = document.getElementById("eventLinkButton");
     const bannerContainer = document.querySelector(".banner-container"); // Aggiunto qui
 
-    fetch("https://salandra-lovers-default-rtdb.firebaseio.com/events.json")
-      .then(response => response.json())
-      .then(eventsData => {
-        for (const eventId in eventsData) {
-          const eventData = eventsData[eventId];
-          createBannerElement(eventData);
-        }
-      })
-      .catch(error => {
-        console.error('Errore durante il recupero dei dati da Firebase:', error);
-      });
+    fetch("https://salandra-lovers-default-rtdb.firebaseio.com/events.json?timestamp=" + Date.now())
+    .then(response => response.json())
+    .then(eventsData => {
+      // Resto del tuo codice per la gestione degli eventi
+    })
+    .catch(error => {
+      console.error('Errore durante il recupero dei dati da Firebase:', error);
+    });
 
     closeModal.addEventListener("click", function() {
         eventModal.style.display = "none";
