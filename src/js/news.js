@@ -42,8 +42,3 @@ fetch('https://salandra-lovers-default-rtdb.firebaseio.com/news.json')
     newsContainer.appendChild(cardDiv);
   }
   
-  window.addEventListener("load", function () {
-    const loadingScreen = document.querySelector(".loading-screen");
-    loadingScreen.style.display = "none";
-    document.body.style.overflow = "auto"; // Riabilita lo scorrimento
-  });
