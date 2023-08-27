@@ -164,3 +164,9 @@ createPostModalOverlay.addEventListener('click', function(event) {
 function openWebPage() {
   window.open("https://www.instagram.com/", "_blank"); // Cambia l'URL con quello desiderato
 }
+
+window.addEventListener("load", function () {
+  const loadingScreen = document.querySelector(".loading-screen");
+  loadingScreen.style.display = "none";
+  document.body.style.overflow = "auto"; // Riabilita lo scorrimento
+});
