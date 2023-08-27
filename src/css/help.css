@@ -62,3 +62,30 @@ body {
   margin: 0 auto; /* Imposta i margini automaticamente per centrare l'immagine orizzontalmente */
 }
 
+.news-title {
+  border-left: 4px solid green;
+  padding-left: 10px; /* Aggiungi spazio a sinistra per l'effetto di bordino */
+}
+
+.maps {
+  border-left: 4px solid green;
+  padding-left: 10px; /* Aggiungi spazio a sinistra per l'effetto di bordino */
+}
+
+.poi {
+  border-left: 4px solid green;
+  padding-left: 10px; /* Aggiungi spazio a sinistra per l'effetto di bordino */
+}
+
+.events {
+  border-left: 4px solid green;
+  padding-left: 10px; /* Aggiungi spazio a sinistra per l'effetto di bordino */
+}
+
+.photo {
+  border-left: 4px solid green;
+  padding-left: 10px; /* Aggiungi spazio a sinistra per l'effetto di bordino */
+}
+
+
+
