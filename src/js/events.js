@@ -56,3 +56,9 @@ document.addEventListener("DOMContentLoaded", function() {
         window.open(link, "_blank");
     });
 });
+
+window.addEventListener("load", function () {
+  const loadingScreen = document.querySelector(".loading-screen");
+  loadingScreen.style.display = "none";
+  document.body.style.overflow = "auto"; // Riabilita lo scorrimento
+});
