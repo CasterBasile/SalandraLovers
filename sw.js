@@ -152,13 +152,14 @@ self.addEventListener('fetch', function (event) {
   }
 });
 
-self.addEventListener('message', function (event) {
-  console.log('Message received in service worker:', event.data);
-  if (event.data.action === 'refresh') {
-    self.registration.unregister().then(function () {
-      return self.clients.matchAll();
-    }).then(function (clients) {
-      clients.forEach(function (client) {
+self.addEventListener('message', event => {
+  if (event.data && event.data.command === 'reload') {
+    // Effettua la ricarica del cache del service worker
+    self.skipWaiting();
+
+    // Invia un messaggio a tutte le pagine client per farle ricaricare
+    clients.matchAll().then(clients => {
+      clients.forEach(client => {
         client.postMessage({ action: 'reload' });
       });
     });
