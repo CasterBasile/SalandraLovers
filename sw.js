@@ -1,8 +1,8 @@
 importScripts('/src/js/idb.js');
 importScripts('/src/js/utility.js');
 
-var CACHE_STATIC_NAME = 'static-v21';
-var CACHE_DYNAMIC_NAME = 'dynamic-v2';
+var CACHE_STATIC_NAME = 'static-v22';
+var CACHE_DYNAMIC_NAME = 'dynamic-v3';
 var STATIC_FILES = [
   '/',
   '/index.html',
@@ -38,6 +38,8 @@ var dbPromise=idb.open('posts-store', 1, function(db){
     db.createObjectStore('posts', {keyPath: 'id'});
   }
 });
+
+
 
 self.addEventListener('install', function (event) {
   console.log('[Service Worker] Installing Service Worker ...', event);
@@ -147,5 +149,18 @@ self.addEventListener('fetch', function (event) {
           }
         })
     );
+  }
+});
+
+self.addEventListener('message', function (event) {
+  console.log('Message received in service worker:', event.data);
+  if (event.data.action === 'refresh') {
+    self.registration.unregister().then(function () {
+      return self.clients.matchAll();
+    }).then(function (clients) {
+      clients.forEach(function (client) {
+        client.postMessage({ action: 'reload' });
+      });
+    });
   }
 });
