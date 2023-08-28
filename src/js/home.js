@@ -22,36 +22,32 @@ function changeBackgroundImage() {
 
 changeBackgroundImage();
 
-const modalOverlay = document.getElementById('modalOverlay');
-const closeButton = document.getElementById('closeButton');
-const modalContent = document.getElementById('modalContent');
+// Aggiungi l'event listener per aprire la finestra modale
+document.getElementById('openModalButton').addEventListener('click', function() {
+    document.getElementById('modalOverlay').style.display = 'block';
+  });
+  
+  // Prima di tutto, devi ottenere il riferimento al nodo "banner" su Firebase
+var bannerRef = firebase.database().ref("banner");
 
-// URL del nodo in Firebase
-const firebaseUrl = 'https://salandra-lovers-default-rtdb.firebaseio.com/banner.json';
-
-// Recupera i dati da Firebase
-fetch(firebaseUrl)
-  .then(response => response.json())
-  .then(data => {
-    // Verifica se ci sono dati nel nodo
-    if (data) {
-      // Mostra la finestra modale con il contenuto recuperato da Firebase
-      modalContent.textContent = data.message;
-      modalOverlay.style.display = 'block';
+// Ora puoi controllare se il nodo esiste
+bannerRef.once("value")
+  .then(function(snapshot) {
+    var bannerData = snapshot.val();
+    if (bannerData) {
+      // Il nodo "banner" esiste, quindi mostra il banner
+      document.getElementById("modalOverlay").style.display = "block";
+    } else {
+      // Il nodo "banner" non esiste, quindi nascondi il banner
+      document.getElementById("modalOverlay").style.display = "none";
     }
   })
-  .catch(error => {
-    console.error('Errore durante il recupero dei dati da Firebase:', error);
+  .catch(function(error) {
+    console.error("Errore nel recupero dei dati del banner da Firebase:", error);
   });
 
-// Chiudi la finestra modale cliccando sulla "X"
-closeButton.addEventListener('click', () => {
-  modalOverlay.style.display = 'none';
-});
 
-// Chiudi la finestra modale cliccando all'esterno della finestra
-window.addEventListener('click', (event) => {
-  if (event.target === modalOverlay) {
-    modalOverlay.style.display = 'none';
-  }
+// Aggiungi l'evento di chiusura per il banner
+document.getElementById("closeButton").addEventListener("click", function() {
+  document.getElementById("modalOverlay").style.display = "none";
 });
