@@ -26,11 +26,13 @@ changeBackgroundImage();
 fetch("https://salandra-lovers-default-rtdb.firebaseio.com/banner.json")
   .then(response => response.json())
   .then(data => {
-    if (data) {
-      // Il nodo "banner" esiste, quindi mostra il banner
+    if (data && data.image) {
+      // Il nodo "banner" esiste e contiene un'immagine, quindi mostra il banner
       document.getElementById("modalOverlay").style.display = "block";
+      const modalContent = document.getElementById("modalContent");
+      modalContent.innerHTML = `<img src="${data.image}" alt="Banner Image">`;
     } else {
-      // Il nodo "banner" non esiste, quindi nascondi il banner
+      // Il nodo "banner" non esiste o non contiene un'immagine, quindi nascondi il banner
       document.getElementById("modalOverlay").style.display = "none";
     }
   })
