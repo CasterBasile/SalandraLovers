@@ -6,7 +6,8 @@ if (!window.Promise) {
 }
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js', { scope: '/' })
+  navigator.serviceWorker
+    .register('/sw.js')
     .then(function () {
       console.log('Service worker registered!');
     })
@@ -20,11 +21,4 @@ window.addEventListener('beforeinstallprompt', function(event) {
   event.preventDefault();
   deferredPrompt = event;
   return false;
-});
-
-document.getElementById('updateButton').addEventListener('click', function () {
-  console.log('Update button clicked');
-  if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
-    navigator.serviceWorker.controller.postMessage({ action: 'refresh' });
-  }
 });
