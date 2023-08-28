@@ -22,19 +22,11 @@ function changeBackgroundImage() {
 
 changeBackgroundImage();
 
-// Aggiungi l'event listener per aprire la finestra modale
-document.getElementById('openModalButton').addEventListener('click', function() {
-    document.getElementById('modalOverlay').style.display = 'block';
-  });
-  
-  // Prima di tutto, devi ottenere il riferimento al nodo "banner" su Firebase
-var bannerRef = firebase.database().ref("banner");
 
-// Ora puoi controllare se il nodo esiste
-bannerRef.once("value")
-  .then(function(snapshot) {
-    var bannerData = snapshot.val();
-    if (bannerData) {
+fetch("https://salandra-lovers-default-rtdb.firebaseio.com/banner.json")
+  .then(response => response.json())
+  .then(data => {
+    if (data) {
       // Il nodo "banner" esiste, quindi mostra il banner
       document.getElementById("modalOverlay").style.display = "block";
     } else {
@@ -42,12 +34,10 @@ bannerRef.once("value")
       document.getElementById("modalOverlay").style.display = "none";
     }
   })
-  .catch(function(error) {
+  .catch(error => {
     console.error("Errore nel recupero dei dati del banner da Firebase:", error);
   });
 
-
-// Aggiungi l'evento di chiusura per il banner
-document.getElementById("closeButton").addEventListener("click", function() {
-  document.getElementById("modalOverlay").style.display = "none";
-});
+  document.getElementById("closeButton").addEventListener("click", function() {
+    document.getElementById("modalOverlay").style.display = "none";
+  });
