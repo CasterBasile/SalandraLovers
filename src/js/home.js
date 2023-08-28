@@ -43,3 +43,46 @@ fetch("https://salandra-lovers-default-rtdb.firebaseio.com/banner.json")
   document.getElementById("closeButton").addEventListener("click", function() {
     document.getElementById("modalOverlay").style.display = "none";
   });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Verifica se il banner è già stato visualizzato
+    if (!localStorage.getItem('bannerShown')) {
+      // Mostra il banner solo all'avvio
+      const bannerImageUrl = "https://firebasestorage.googleapis.com/v0/b/salandra-lovers.appspot.com/o/nuovo.jpg?alt=media&token=afda9008-adc4-4a1a-af4a-b8ffdf88448d";
+      mostraFinestraBanner(bannerImageUrl);
+  
+      // Imposta la chiave nel Local Storage
+      localStorage.setItem('bannerShown', 'true');
+    }
+  });
+  
+
+  function mostraFinestraBanner(imageUrl) {
+    const modalOverlay = document.createElement('div');
+    modalOverlay.classList.add('modal-overlay');
+  
+    const modalContent = document.createElement('div');
+    modalContent.classList.add('modal-content');
+  
+    const closeButton = document.createElement('span');
+    closeButton.classList.add('close-button');
+    closeButton.innerHTML = '&times;';
+    closeButton.addEventListener('click', chiudiFinestraBanner);
+  
+    const modalImage = document.createElement('img');
+    modalImage.src = imageUrl; // Immagine presa dal database
+  
+    modalContent.appendChild(closeButton);
+    modalContent.appendChild(modalImage);
+  
+    modalOverlay.appendChild(modalContent);
+  
+    document.body.appendChild(modalOverlay);
+  }
+  
+  function chiudiFinestraBanner() {
+    const modalOverlay = document.querySelector('.modal-overlay');
+    if (modalOverlay) {
+      modalOverlay.remove();
+    }
+  }
