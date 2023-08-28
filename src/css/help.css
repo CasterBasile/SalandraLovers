@@ -63,27 +63,27 @@ body {
 }
 
 .news-title {
-  border-left: 4px solid green;
+  border-left: 4px solid #196F3D;
   padding-left: 10px; /* Aggiungi spazio a sinistra per l'effetto di bordino */
 }
 
 .maps {
-  border-left: 4px solid green;
+  border-left: 4px solid #196F3D;
   padding-left: 10px; /* Aggiungi spazio a sinistra per l'effetto di bordino */
 }
 
 .poi {
-  border-left: 4px solid green;
+  border-left: 4px solid #196F3D;
   padding-left: 10px; /* Aggiungi spazio a sinistra per l'effetto di bordino */
 }
 
 .events {
-  border-left: 4px solid green;
+  border-left: 4px solid #196F3D;
   padding-left: 10px; /* Aggiungi spazio a sinistra per l'effetto di bordino */
 }
 
 .photo {
-  border-left: 4px solid green;
+  border-left: 4px solid #196F3D;
   padding-left: 10px; /* Aggiungi spazio a sinistra per l'effetto di bordino */
 }
 

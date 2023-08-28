@@ -78,9 +78,11 @@ function isInArray(string, array) {
 
 
 self.addEventListener('fetch', function (event) {
+  var dataUrlPosts = 'https://salandra-lovers-default-rtdb.firebaseio.com/posts';
+  var dataUrlEvents = 'https://salandra-lovers-default-rtdb.firebaseio.com/events';
 
-  var url = 'https://salandra-lovers-default-rtdb.firebaseio.com/posts';
-  if (event.request.url.indexOf(url) > -1) {
+  if (event.request.url.indexOf(dataUrlPosts) > -1) {
+    // Logica per gestire la sezione dei posts
     event.respondWith(fetch(event.request)
       .then(function (res) {
         var clonedRes = res.clone();
@@ -90,17 +92,36 @@ self.addEventListener('fetch', function (event) {
           })
           .then(function (data) {
             for (var key in data) {
-              writeData('posts', data[key])
+              writeData('posts', data[key]);
+            }
+          });
+        return res;
+      })
+    );
+  } else if (event.request.url.indexOf(dataUrlEvents) > -1) {
+    // Logica per gestire la sezione degli eventi
+    event.respondWith(fetch(event.request)
+      .then(function (res) {
+        var clonedRes = res.clone();
+        clearAllData('events')
+          .then(function () {
+            return clonedRes.json();
+          })
+          .then(function (data) {
+            for (var key in data) {
+              writeData('events', data[key]);
             }
           });
         return res;
       })
     );
   } else if (isInArray(event.request.url, STATIC_FILES)) {
+    // Logica per gestire risorse statiche
     event.respondWith(
       caches.match(event.request)
     );
   } else {
+    // Logica per gestire altre richieste
     event.respondWith(
       caches.match(event.request)
         .then(function (response) {
@@ -111,10 +132,9 @@ self.addEventListener('fetch', function (event) {
               .then(function (res) {
                 return caches.open(CACHE_DYNAMIC_NAME)
                   .then(function (cache) {
-                    // trimCache(CACHE_DYNAMIC_NAME, 3);
                     cache.put(event.request.url, res.clone());
                     return res;
-                  })
+                  });
               })
               .catch(function (err) {
                 return caches.open(CACHE_STATIC_NAME)
