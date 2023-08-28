@@ -22,3 +22,36 @@ function changeBackgroundImage() {
 
 changeBackgroundImage();
 
+const modalOverlay = document.getElementById('modalOverlay');
+const closeButton = document.getElementById('closeButton');
+const modalContent = document.getElementById('modalContent');
+
+// URL del nodo in Firebase
+const firebaseUrl = 'https://salandra-lovers-default-rtdb.firebaseio.com/banner.json';
+
+// Recupera i dati da Firebase
+fetch(firebaseUrl)
+  .then(response => response.json())
+  .then(data => {
+    // Verifica se ci sono dati nel nodo
+    if (data) {
+      // Mostra la finestra modale con il contenuto recuperato da Firebase
+      modalContent.textContent = data.message;
+      modalOverlay.style.display = 'block';
+    }
+  })
+  .catch(error => {
+    console.error('Errore durante il recupero dei dati da Firebase:', error);
+  });
+
+// Chiudi la finestra modale cliccando sulla "X"
+closeButton.addEventListener('click', () => {
+  modalOverlay.style.display = 'none';
+});
+
+// Chiudi la finestra modale cliccando all'esterno della finestra
+window.addEventListener('click', (event) => {
+  if (event.target === modalOverlay) {
+    modalOverlay.style.display = 'none';
+  }
+});
