@@ -1,8 +1,8 @@
 importScripts('/src/js/idb.js');
 importScripts('/src/js/utility.js');
 
-var CACHE_STATIC_NAME = 'static-v21';
-var CACHE_DYNAMIC_NAME = 'dynamic-v2';
+var CACHE_STATIC_NAME = 'static-v22';
+var CACHE_DYNAMIC_NAME = 'dynamic-v3';
 var STATIC_FILES = [
   '/',
   '/index.html',
@@ -10,17 +10,18 @@ var STATIC_FILES = [
   '/feed/index.html',
   '/events/index.html',
   '/poiPage/index.html',
+  '/info/index.html',
   '/offline.html',
   '/src/js/app.js',
   '/src/js/feed.js',
   '/src/js/news.js',
   '/src/js/home.js',
+  '/src/js/info.js',
   '/src/js/idb.js',
   '/src/js/promise.js',
   '/src/js/fetch.js',
   '/src/js/events.js',
   '/src/js/poiPage.js',
-  '/src/js/salandra.js',
   '/src/js/material.min.js',
   '/src/css/app.css',
   '/src/css/feed.css',
@@ -28,7 +29,7 @@ var STATIC_FILES = [
   '/src/css/home.css',
   '/src/css/events.css',
   '/src/css/poiPage.css',
-  '/src/css/salandra.css',
+  '/src/css/info.css',
   '/src/images/main-image.jpg',
   'https://fonts.googleapis.com/css?family=Roboto:400,700',
   'https://fonts.googleapis.com/icon?family=Material+Icons',
