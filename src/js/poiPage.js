@@ -28,6 +28,21 @@ document.addEventListener("DOMContentLoaded", function() {
         subtitle: "Il rifugio del brigante",
         link: "http://piscinola.blogspot.com/2014/09/il-brigante-partigiano-alfonso-cerullo.html"
       },
+      {
+        title: "Torchio Romano",
+        image: "/src/images/poiImages/poiTorchio.jpg",
+        description: "Nel cuore del suggestivo Bosco della Salandra a Marano di Napoli, puoi scoprire un antico 'lapis pedicinus' nascosto tra la natura rigogliosa. Questo antico elemento è tutto ciò che rimane di un torchio più grande, una testimonianza affascinante del passato che si intreccia con la bellezza della natura circostante.\n\nIl 'lapis pedicinus' è realizzato in pietra, levigato dal tempo e dalle intemperie. La sua forma e la sua posizione suggeriscono la sua funzione nel processo di produzione del vino o dell'olio, un tempo vitale per la comunità che abitava questa zona. Nonostante sia ormai incompleto e parzialmente nascosto dalla vegetazione, questo 'lapis pedicinus' racconta una storia di lavori agricoli e tradizioni locali. Mentre lo osservi, potresti immaginare come una volta gli abitanti di questo luogo usassero con maestria questa pietra per estrarre i preziosi succhi dalla loro raccolta. Il 'lapis pedicinus' è una finestra sul passato, un frammento di un'epoca in cui la natura e la cultura si univano in armonia in questo affascinante bosco.",
+        subtitle: "Resti di ciò che era la vita ai tempi dei Romani",
+        link: "https://www.facebook.com/photo/?fbid=170981602929791&set=a.170979979596620&locale=it_IT"
+      },      
+      {
+        title: "Cisterna Romana",
+        image: "/src/images/poiImages/poiCisterna.jpg",
+        description: "Nel pittoresco Bosco della Salandra a Marano di Napoli, accanto al torchio, troverai una antica cisterna che si nasconde sotto il livello di calpestio. Questo tesoro nascosto, con la sua volta ancora intatta, è una testimonianza tangibile del passato che si fonde armoniosamente con l'ambiente circostante.\n\nLa cisterna è un'opera d'ingegneria semplice ma vitale, un simbolo della capacità degli abitanti di questa zona di sfruttare saggiamente le risorse naturali. La sua struttura sotterranea e la volta ben conservata suggeriscono che una volta fosse utilizzata per raccogliere e conservare preziosa acqua piovana. Questo elemento era di importanza cruciale per la vita quotidiana, soprattutto in un ambiente così ricco di vegetazione e risorse naturali come il Bosco della Salandra.\n\nOggi, mentre esplori questa antica cisterna, puoi immaginare il lavoro di coloro che l'hanno costruita e utilizzata. La sua ubicazione vicino al torchio suggerisce una connessione tra la produzione di vino o olio e la conservazione dell'acqua. Questa cisterna è una finestra aperta sul passato, un'opportunità per connettersi con la storia e la saggezza degli abitanti di questa regione.\n\nLa volta ancora intatta e la sua posizione discreta tra la vegetazione aggiungono un tocco di bellezza a questo luogo. La cisterna nel Bosco della Salandra rappresenta un legame tangibile tra l'umanità e la natura, una testimonianza silenziosa di un passato che continua a ispirare e affascinare.",
+        subtitle: "Antica cisterna con volta ancora intatta",
+        link: "https://www.facebook.com/photo?fbid=170981602929791&set=a.170979979596620&locale=it_IT"
+      }
+         
       // Aggiungi altri eventi allo stesso modo
     ];
   
