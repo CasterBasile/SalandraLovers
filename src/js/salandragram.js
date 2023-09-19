@@ -1,69 +1,37 @@
-// Includi Firebase e configura l'app Firebase
+// Inizializza Firebase con la tua configurazione
 const firebaseConfig = {
     apiKey: "AIzaSyBIQuGgnvuI9p5TDH6j19l8A3BUmjZOjv0",
     authDomain: "salandra-lovers.firebaseapp.com",
+    databaseURL: "https://salandra-lovers-default-rtdb.firebaseio.com",
     projectId: "salandra-lovers",
     storageBucket: "salandra-lovers.appspot.com",
     messagingSenderId: "851379002062",
     appId: "1:851379002062:web:89be0c914575b8c1840e9f"
-};
-
-firebase.initializeApp(firebaseConfig);
-
-// Riferimenti agli elementi HTML
-const addButton = document.getElementById('add-button');
-const addForm = document.getElementById('add-form');
-const photoInput = document.getElementById('photo-input');
-const usernameInput = document.getElementById('username-input');
-const descriptionInput = document.getElementById('description-input');
-const uploadButton = document.getElementById('upload-button');
-const photoGrid = document.getElementById('photo-grid');
-
-// Mostra/nascondi il form quando si clicca sul tasto "+"
-addButton.addEventListener('click', () => {
-    addForm.style.display = 'block';
-});
-
-// Nascondi il form quando si preme il pulsante "Carica" senza selezionare un file
-uploadButton.addEventListener('click', () => {
-    const file = photoInput.files[0];
-    const username = usernameInput.value;
-    const description = descriptionInput.value;
-
-    if (file && username && description) {
-        const storageRef = firebase.storage().ref(`photos/${file.name}`);
-        storageRef.put(file).then(() => {
-            // Ottieni l'URL dell'immagine caricata
-            storageRef.getDownloadURL().then((downloadURL) => {
-                // Crea un elemento immagine e aggiungilo al grid
-                const img = document.createElement('img');
-                img.src = downloadURL;
-                const usernameDiv = document.createElement('div');
-                usernameDiv.innerText = `Utente: ${username}`;
-                const descriptionDiv = document.createElement('div');
-                descriptionDiv.innerText = `Descrizione: ${description}`;
-
-                const photoDiv = document.createElement('div');
-                photoDiv.appendChild(img);
-                photoDiv.appendChild(usernameDiv);
-                photoDiv.appendChild(descriptionDiv);
-
-                photoGrid.appendChild(photoDiv);
-
-                // Nascondi il form e resetta i campi
-                addForm.style.display = 'none';
-                photoInput.value = '';
-                usernameInput.value = '';
-                descriptionInput.value = '';
-            });
-        });
-    } else {
-        alert('Compila tutti i campi prima di caricare l\'immagine.');
-    }
-});
-
-function loadPhotos() {
-
-}
-
-loadPhotos();
+  };
+  
+  firebase.initializeApp(firebaseConfig);
+  
+  // Riferimento al tuo database
+  const database = firebase.database();
+  
+  // Gestisci il caricamento di una foto e una descrizione
+  function caricaFotoENomeUtente(fotoURL, descrizione, nomeUtente) {
+    const nuovaFotoRef = database.ref("salandragram").push();
+    nuovaFotoRef.set({
+      fotoURL: fotoURL,
+      descrizione: descrizione,
+      nomeUtente: nomeUtente
+    });
+  }
+  
+  // Aggiungi un gestore di eventi al pulsante "+"
+  const pulsanteCarica = document.getElementById("pulsanteCarica");
+  pulsanteCarica.addEventListener("click", () => {
+    const fotoURL = document.getElementById("inputFoto").value;
+    const descrizione = document.getElementById("inputDescrizione").value;
+    const nomeUtente = document.getElementById("inputNomeUtente").value;
+  
+    // Chiama la funzione per caricare la foto e la descrizione
+    caricaFotoENomeUtente(fotoURL, descrizione, nomeUtente);
+  });
+  

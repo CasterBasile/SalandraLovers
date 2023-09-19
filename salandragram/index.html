@@ -3,22 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SalandraGram</title>
+    <title>Salandragram</title>
 </head>
 <body>
-    <div id="photo-grid">
-        <!-- Qui verranno visualizzate le foto degli utenti -->
-    </div>
-    <button id="add-button">+</button>
-    <div id="add-form" style="display: none;">
-        <input type="file" id="photo-input" accept="image/*">
-        <input type="text" id="username-input" placeholder="Nome utente">
-        <input type="text" id="description-input" placeholder="Descrizione">
-        <button id="upload-button">Carica</button>
+    <header>
+        <h1>Salandragram</h1>
+    </header>
+    <main>
+        <!-- Elenco delle foto e dei post degli utenti -->
+        <div id="fotoPostContainer">
+            <!-- Qui verranno visualizzate le foto e i post degli utenti -->
+        </div>
+
+        <!-- Pulsante per aggiungere una nuova foto e post -->
+        <button id="pulsanteCarica">+</button>
+    </main>
+
+    <!-- Modulo per il caricamento di una nuova foto e post -->
+    <div id="moduloCaricamento" style="display: none;">
+        <input type="text" id="inputFoto" placeholder="URL della foto">
+        <input type="text" id="inputDescrizione" placeholder="Descrizione">
+        <input type="text" id="inputNomeUtente" placeholder="Nome Utente">
+        <button id="pulsanteConferma">Conferma</button>
     </div>
 
-    <script src="https://www.gstatic.com/firebasejs/9.3.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.3.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     <script src="/src/js/salandragram.js"></script>
 </body>
 </html>
