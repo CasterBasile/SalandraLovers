@@ -2,12 +2,10 @@
 const firebaseConfig = {
     apiKey: "AIzaSyBIQuGgnvuI9p5TDH6j19l8A3BUmjZOjv0",
     authDomain: "salandra-lovers.firebaseapp.com",
-    databaseURL: "https://salandra-lovers-default-rtdb.firebaseio.com",
     projectId: "salandra-lovers",
     storageBucket: "salandra-lovers.appspot.com",
     messagingSenderId: "851379002062",
-    appId: "1:851379002062:web:89be0c914575b8c1840e9f",
-    measurementId: "G-K6H6SHKN05"
+    appId: "1:851379002062:web:89be0c914575b8c1840e9f"
 };
 
 firebase.initializeApp(firebaseConfig);
@@ -21,7 +19,7 @@ const descriptionInput = document.getElementById('description-input');
 const uploadButton = document.getElementById('upload-button');
 const photoGrid = document.getElementById('photo-grid');
 
-// Mostra/nascondi il form quando si clicca sul tasto +
+// Mostra/nascondi il form quando si clicca sul tasto "+"
 addButton.addEventListener('click', () => {
     addForm.style.display = 'block';
 });
@@ -39,7 +37,7 @@ uploadButton.addEventListener('click', () => {
             storageRef.getDownloadURL().then((downloadURL) => {
                 // Crea un elemento immagine e aggiungilo al grid
                 const img = document.createElement('img');
-                img.src = "https://salandra-lovers-default-rtdb.firebaseio.com/salandragram";
+                img.src = downloadURL;
                 const usernameDiv = document.createElement('div');
                 usernameDiv.innerText = `Utente: ${username}`;
                 const descriptionDiv = document.createElement('div');
