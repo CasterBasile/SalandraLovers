@@ -1,117 +1,3 @@
-
-var deferredPrompt;
-var enableNotificationsButtons = document.querySelectorAll('.enable-notifications');
-
-if (!window.Promise) {
-  window.Promise = Promise;
-}
-
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker
-    .register('/sw.js')
-    .then(function () {
-      console.log('Service worker registered!');
-    })
-    .catch(function(err) {
-      console.log(err);
-    });
-}
-
-window.addEventListener('beforeinstallprompt', function(event) {
-  console.log('beforeinstallprompt fired');
-  event.preventDefault();
-  deferredPrompt = event;
-  return false;
-});
-
-function displayConfirmNotification() {
-  if ('serviceWorker' in navigator) {
-    var options = {
-      body: 'You successfully subscribed to our Notification service!',
-      icon: '/src/images/icons/app-icon-96x96.png',
-      image: '/src/images/sf-boat.jpg',
-      dir: 'ltr',
-      lang: 'en-US', // BCP 47,
-      vibrate: [100, 50, 200],
-      badge: '/src/images/icons/app-icon-96x96.png',
-      tag: 'confirm-notification',
-      renotify: true,
-      actions: [
-        { action: 'confirm', title: 'Okay', icon: '/src/images/icons/app-icon-96x96.png' },
-        { action: 'cancel', title: 'Cancel', icon: '/src/images/icons/app-icon-96x96.png' }
-      ]
-    };
-
-    navigator.serviceWorker.ready
-      .then(function(swreg) {
-        swreg.showNotification('Successfully subscribed!', options);
-      });
-  }
-}
-
-function configurePushSub() {
-  if (!('serviceWorker' in navigator)) {
-    return;
-  }
-
-  var reg;
-  navigator.serviceWorker.ready
-    .then(function(swreg) {
-      reg = swreg;
-      return swreg.pushManager.getSubscription();
-    })
-    .then(function(sub) {
-      if (sub === null) {
-        // Create a new subscription
-        var vapidPublicKey = 'BKapuZ3XLgt9UZhuEkodCrtnfBo9Smo-w1YXCIH8YidjHOFAU6XHpEnXefbuYslZY9vtlEnOAmU7Mc-kWh4gfmE';
-        var convertedVapidPublicKey = urlBase64ToUint8Array(vapidPublicKey);
-        return reg.pushManager.subscribe({
-          userVisibleOnly: true,
-          applicationServerKey: convertedVapidPublicKey
-        });
-      } else {
-        // We have a subscription
-      }
-    })
-    .then(function(newSub) {
-      return fetch('https://pwagram-99adf.firebaseio.com/subscriptions.json', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(newSub)
-      })
-    })
-    .then(function(res) {
-      if (res.ok) {
-        displayConfirmNotification();
-      }
-    })
-    .catch(function(err) {
-      console.log(err);
-    });
-}
-
-function askForNotificationPermission() {
-  Notification.requestPermission(function(result) {
-    console.log('User Choice', result);
-    if (result !== 'granted') {
-      console.log('No notification permission granted!');
-    } else {
-      configurePushSub();
-      // displayConfirmNotification();
-    }
-  });
-}
-
-if ('Notification' in window && 'serviceWorker' in navigator) {
-  for (var i = 0; i < enableNotificationsButtons.length; i++) {
-    enableNotificationsButtons[i].style.display = 'inline-block';
-    enableNotificationsButtons[i].addEventListener('click', askForNotificationPermission);
-  }
-}
-
 var shareImageButton = document.querySelector('#share-image-button');
 var createPostArea = document.querySelector('#create-post');
 var closeCreatePostModalButton = document.querySelector('#close-create-post-modal-btn');
@@ -124,10 +10,48 @@ var canvasElement = document.querySelector('#canvas');
 var captureButton = document.querySelector('#capture-btn');
 var imagePicker = document.querySelector('#image-picker');
 var imagePickerArea = document.querySelector('#pick-image');
+var picture;
 
 function initializeMedia() {
+  if (!('mediaDevices' in navigator)) {
+    navigator.mediaDevices = {};
+  }
 
+  if (!('getUserMedia' in navigator.mediaDevices)) {
+    navigator.mediaDevices.getUserMedia = function(constraints) {
+      var getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+
+      if (!getUserMedia) {
+        return Promise.reject(new Error('getUserMedia is not implemented!'));
+      }
+
+      return new Promise(function(resolve, reject) {
+        getUserMedia.call(navigator, constraints, resolve, reject);
+      });
+    }
+  }
+
+  navigator.mediaDevices.getUserMedia({video: true})
+    .then(function(stream) {
+      videoPlayer.srcObject = stream;
+      videoPlayer.style.display = 'block';
+    })
+    .catch(function(err) {
+      imagePickerArea.style.display = 'block';
+    });
 }
+
+captureButton.addEventListener('click', function(event) {
+  canvasElement.style.display = 'block';
+  videoPlayer.style.display = 'none';
+  captureButton.style.display = 'none';
+  var context = canvasElement.getContext('2d');
+  context.drawImage(videoPlayer, 0, 0, canvas.width, videoPlayer.videoHeight / (videoPlayer.videoWidth / canvas.width));
+  videoPlayer.srcObject.getVideoTracks().forEach(function(track) {
+    track.stop();
+  });
+  picture = dataURItoBlob(canvasElement.toDataURL());
+});
 
 function openCreatePostModal() {
   // createPostArea.style.display = 'block';
@@ -163,6 +87,9 @@ function openCreatePostModal() {
 
 function closeCreatePostModal() {
   createPostArea.style.transform = 'translateY(100vh)';
+  imagePickerArea.style.display = 'none';
+  videoPlayer.style.display = 'none';
+  canvasElement.style.display = 'none';
   // createPostArea.style.display = 'none';
 }
 
@@ -249,18 +176,16 @@ if ('indexedDB' in window) {
 }
 
 function sendData() {
+  var id = new Date().toISOString();
+  var postData = new FormData();
+  postData.append('id', id);
+  postData.append('title', titleInput.value);
+  postData.append('location', locationInput.value);
+  postData.append('file', picture, id + '.png');
+
   fetch('https://us-central1-pwagram-99adf.cloudfunctions.net/storePostData', {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    },
-    body: JSON.stringify({
-      id: new Date().toISOString(),
-      title: titleInput.value,
-      location: locationInput.value,
-      image: 'https://firebasestorage.googleapis.com/v0/b/pwagram-99adf.appspot.com/o/sf-boat.jpg?alt=media&token=19f4770c-fc8c-4882-92f1-62000ff06f16'
-    })
+    body: postData
   })
     .then(function(res) {
       console.log('Sent data', res);
@@ -284,7 +209,8 @@ form.addEventListener('submit', function(event) {
         var post = {
           id: new Date().toISOString(),
           title: titleInput.value,
-          location: locationInput.value
+          location: locationInput.value,
+          picture: picture
         };
         writeData('sync-posts', post)
           .then(function() {
