@@ -324,3 +324,27 @@ cursor: pointer;
   height: auto; /* Imposta l'altezza automaticamente in base alla larghezza */
 }
 
+/* CSS personalizzato per il lettore audio */
+.custom-audio-player {
+  background-color: #943126; /* Cambia il colore di sfondo */
+  color: #943126; /* Cambia il colore del testo */
+  border: none; /* Rimuovi il bordo */
+  outline: none; /* Rimuovi l'outline */
+}
+
+.custom-audio-player::-webkit-media-controls-panel {
+  background-color: #943126; /* Cambia il colore di sfondo dei controlli */
+  color: #943126; /* Cambia il colore del testo dei controlli */
+  border: none; /* Rimuovi il bordo dei controlli */
+  outline: none; /* Rimuovi l'outline dei controlli */
+}
+.custom-audio-player::-webkit-media-controls-play-button {
+  background-color: #943126; /* Cambia il colore del pulsante di riproduzione */
+  color: #336699; /* Cambia il colore del simbolo del pulsante di riproduzione */
+}
+
+.custom-audio-player::-webkit-media-controls-volume-slider {
+  background-color: #943126; /* Cambia il colore dello slider del volume */
+}
+
+/* Puoi aggiungere ulteriori stili personalizzati secondo le tue preferenze */
