@@ -62,11 +62,8 @@ uploadButton.addEventListener('click', () => {
     }
 });
 
-// Funzione per caricare tutte le immagini esistenti
 function loadPhotos() {
-    // TODO: Qui dovresti recuperare le immagini da Firebase Storage e aggiungerle al photoGrid.
-    // Puoi utilizzare Firebase Storage per archiviare e recuperare le immagini.
+
 }
 
-// Chiamata per caricare le immagini all'avvio dell'app
 loadPhotos();
