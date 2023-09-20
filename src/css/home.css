@@ -188,15 +188,7 @@ body {
   }
   
 /*Finestra di avvio*/
-#startup-window {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    display: none; /* La finestra è inizialmente nascosta */
-}
-
-  /* Stili per la finestra pop-up */
-  #popup-container {
+#popup-container {
     display: none;
     position: fixed;
     top: 0;
@@ -229,7 +221,13 @@ body {
 }
 
 #countdown {
-    font-size: 35px;
+    font-size: 18px;
     margin-top: 10px;
-    color: white; /* Cambia il colore del testo qui */
+    color: red; /* Cambia il colore del testo qui */
+}
+
+/* Stile per l'immagine */
+#popup-content img {
+    max-width: 100%; /* Imposta la larghezza massima dell'immagine */
+    height: auto; /* Imposta l'altezza in base alla larghezza mantenendo l'aspetto originale */
 }
