@@ -26,22 +26,39 @@ function changeBackgroundImage() {
 
 changeBackgroundImage();
 
-/*Finestra di avvio*/
+// Funzione per mostrare la finestra pop-up
+let countdown = 7; // Imposta il valore iniziale del conto alla rovescia
 
+function mostraPopup() {
+    const popupContainer = document.getElementById("popup-container");
+    popupContainer.style.display = "block";
+
+    // Chiudi la finestra pop-up automaticamente dopo 7 secondi
+    const countdownInterval = setInterval(function () {
+        countdown--;
+        const countdownElement = document.getElementById("countdown");
+        countdownElement.innerHTML = "Chiusura in " + countdown + " secondi";
+
+        if (countdown <= 0) {
+            clearInterval(countdownInterval);
+            chiudiPopup();
+        }
+    }, 1000); // Esegui il conto alla rovescia ogni 1 secondo
+}
+
+// Funzione per chiudere la finestra pop-up
+function chiudiPopup() {
+    const popupContainer = document.getElementById("popup-container");
+    popupContainer.style.display = "none";
+}
+
+// Funzione per reindirizzare l'utente
 function apriPaginaWeb() {
     // Reindirizza l'utente alla pagina web desiderata
-    window.location.href = "tuapaginaweb.html";
+    window.location.href = "/events";
 }
 
-function chiudiFinestra() {
-    // Chiudi manualmente la finestra e aggiorna lo stato
-    document.getElementById("startup-window").style.display = "none";
-    localStorage.setItem("finestraAvvioChiusa", "true");
-}
-
-// Verifica se la finestra deve essere mostrata
-if (!localStorage.getItem("finestraAvvioChiusa")) {
-    document.getElementById("startup-window").style.display = "block";
-    // Chiudi automaticamente dopo 5 secondi
-    setTimeout(chiudiFinestra, 5000);
-}
+// Mostra la finestra pop-up all'avvio dell'applicazione
+window.onload = function () {
+    mostraPopup();
+};

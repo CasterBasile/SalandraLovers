@@ -29,9 +29,12 @@
   <link rel="apple-touch-icon" href="/src/images/icons/app-icon-180x180.png" sizes="180x180">
 </head>
 <body>
-  <div id="startup-window">
-    <img src="/src/images/Evento.png" onclick="apriPaginaWeb()" alt="Immagine di avvio">
-    <button onclick="chiudiFinestra()">X</button>
+  <div id="popup-container">
+    <div id="popup-content">
+      <span id="close-button" onclick="chiudiPopup()">&times;</span>
+      <img src="/src/images/Evento.png" onclick="apriPaginaWeb()" alt="Immagine di avvio">
+      <div id="countdown">Chiusura in 7 secondi</div>
+    </div>
 </div>
 <div id="app">
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
