@@ -1,305 +1,69 @@
+// Includi Firebase e configura l'app Firebase
+const firebaseConfig = {
+    apiKey: "AIzaSyBIQuGgnvuI9p5TDH6j19l8A3BUmjZOjv0",
+    authDomain: "salandra-lovers.firebaseapp.com",
+    projectId: "salandra-lovers",
+    storageBucket: "salandra-lovers.appspot.com",
+    messagingSenderId: "851379002062",
+    appId: "1:851379002062:web:89be0c914575b8c1840e9f"
+};
 
-var deferredPrompt;
-var enableNotificationsButtons = document.querySelectorAll('.enable-notifications');
+firebase.initializeApp(firebaseConfig);
 
-if (!window.Promise) {
-  window.Promise = Promise;
-}
+// Riferimenti agli elementi HTML
+const addButton = document.getElementById('add-button');
+const addForm = document.getElementById('add-form');
+const photoInput = document.getElementById('photo-input');
+const usernameInput = document.getElementById('username-input');
+const descriptionInput = document.getElementById('description-input');
+const uploadButton = document.getElementById('upload-button');
+const photoGrid = document.getElementById('photo-grid');
 
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker
-    .register('/sw.js')
-    .then(function () {
-      console.log('Service worker registered!');
-    })
-    .catch(function(err) {
-      console.log(err);
-    });
-}
-
-window.addEventListener('beforeinstallprompt', function(event) {
-  console.log('beforeinstallprompt fired');
-  event.preventDefault();
-  deferredPrompt = event;
-  return false;
+// Mostra/nascondi il form quando si clicca sul tasto "+"
+addButton.addEventListener('click', () => {
+    addForm.style.display = 'block';
 });
 
-function displayConfirmNotification() {
-  if ('serviceWorker' in navigator) {
-    var options = {
-      body: 'You successfully subscribed to our Notification service!',
-      icon: '/src/images/icons/app-icon-96x96.png',
-      image: '/src/images/sf-boat.jpg',
-      dir: 'ltr',
-      lang: 'en-US', // BCP 47,
-      vibrate: [100, 50, 200],
-      badge: '/src/images/icons/app-icon-96x96.png',
-      tag: 'confirm-notification',
-      renotify: true,
-      actions: [
-        { action: 'confirm', title: 'Okay', icon: '/src/images/icons/app-icon-96x96.png' },
-        { action: 'cancel', title: 'Cancel', icon: '/src/images/icons/app-icon-96x96.png' }
-      ]
-    };
+// Nascondi il form quando si preme il pulsante "Carica" senza selezionare un file
+uploadButton.addEventListener('click', () => {
+    const file = photoInput.files[0];
+    const username = usernameInput.value;
+    const description = descriptionInput.value;
 
-    navigator.serviceWorker.ready
-      .then(function(swreg) {
-        swreg.showNotification('Successfully subscribed!', options);
-      });
-  }
-}
+    if (file && username && description) {
+        const storageRef = firebase.storage().ref(`photos/${file.name}`);
+        storageRef.put(file).then(() => {
+            // Ottieni l'URL dell'immagine caricata
+            storageRef.getDownloadURL().then((downloadURL) => {
+                // Crea un elemento immagine e aggiungilo al grid
+                const img = document.createElement('img');
+                img.src = downloadURL;
+                const usernameDiv = document.createElement('div');
+                usernameDiv.innerText = `Utente: ${username}`;
+                const descriptionDiv = document.createElement('div');
+                descriptionDiv.innerText = `Descrizione: ${description}`;
 
-function configurePushSub() {
-  if (!('serviceWorker' in navigator)) {
-    return;
-  }
+                const photoDiv = document.createElement('div');
+                photoDiv.appendChild(img);
+                photoDiv.appendChild(usernameDiv);
+                photoDiv.appendChild(descriptionDiv);
 
-  var reg;
-  navigator.serviceWorker.ready
-    .then(function(swreg) {
-      reg = swreg;
-      return swreg.pushManager.getSubscription();
-    })
-    .then(function(sub) {
-      if (sub === null) {
-        // Create a new subscription
-        var vapidPublicKey = 'BKapuZ3XLgt9UZhuEkodCrtnfBo9Smo-w1YXCIH8YidjHOFAU6XHpEnXefbuYslZY9vtlEnOAmU7Mc-kWh4gfmE';
-        var convertedVapidPublicKey = urlBase64ToUint8Array(vapidPublicKey);
-        return reg.pushManager.subscribe({
-          userVisibleOnly: true,
-          applicationServerKey: convertedVapidPublicKey
+                photoGrid.appendChild(photoDiv);
+
+                // Nascondi il form e resetta i campi
+                addForm.style.display = 'none';
+                photoInput.value = '';
+                usernameInput.value = '';
+                descriptionInput.value = '';
+            });
         });
-      } else {
-        // We have a subscription
-      }
-    })
-    .then(function(newSub) {
-      return fetch('https://pwagram-99adf.firebaseio.com/subscriptions.json', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(newSub)
-      })
-    })
-    .then(function(res) {
-      if (res.ok) {
-        displayConfirmNotification();
-      }
-    })
-    .catch(function(err) {
-      console.log(err);
-    });
-}
-
-function askForNotificationPermission() {
-  Notification.requestPermission(function(result) {
-    console.log('User Choice', result);
-    if (result !== 'granted') {
-      console.log('No notification permission granted!');
     } else {
-      configurePushSub();
-      // displayConfirmNotification();
+        alert('Compila tutti i campi prima di caricare l\'immagine.');
     }
-  });
-}
-
-if ('Notification' in window && 'serviceWorker' in navigator) {
-  for (var i = 0; i < enableNotificationsButtons.length; i++) {
-    enableNotificationsButtons[i].style.display = 'inline-block';
-    enableNotificationsButtons[i].addEventListener('click', askForNotificationPermission);
-  }
-}
-
-var shareImageButton = document.querySelector('#share-image-button');
-var createPostArea = document.querySelector('#create-post');
-var closeCreatePostModalButton = document.querySelector('#close-create-post-modal-btn');
-var sharedMomentsArea = document.querySelector('#shared-moments');
-var form = document.querySelector('form');
-var titleInput = document.querySelector('#title');
-var locationInput = document.querySelector('#location');
-var videoPlayer = document.querySelector('#player');
-var canvasElement = document.querySelector('#canvas');
-var captureButton = document.querySelector('#capture-btn');
-var imagePicker = document.querySelector('#image-picker');
-var imagePickerArea = document.querySelector('#pick-image');
-
-function initializeMedia() {
-
-}
-
-function openCreatePostModal() {
-  // createPostArea.style.display = 'block';
-  // setTimeout(function() {
-    createPostArea.style.transform = 'translateY(0)';
-    initializeMedia();
-  // }, 1);
-  if (deferredPrompt) {
-    deferredPrompt.prompt();
-
-    deferredPrompt.userChoice.then(function(choiceResult) {
-      console.log(choiceResult.outcome);
-
-      if (choiceResult.outcome === 'dismissed') {
-        console.log('User cancelled installation');
-      } else {
-        console.log('User added to home screen');
-      }
-    });
-
-    deferredPrompt = null;
-  }
-
-  // if ('serviceWorker' in navigator) {
-  //   navigator.serviceWorker.getRegistrations()
-  //     .then(function(registrations) {
-  //       for (var i = 0; i < registrations.length; i++) {
-  //         registrations[i].unregister();
-  //       }
-  //     })
-  // }
-}
-
-function closeCreatePostModal() {
-  createPostArea.style.transform = 'translateY(100vh)';
-  // createPostArea.style.display = 'none';
-}
-
-shareImageButton.addEventListener('click', openCreatePostModal);
-
-closeCreatePostModalButton.addEventListener('click', closeCreatePostModal);
-
-// Currently not in use, allows to save assets in cache on demand otherwise
-function onSaveButtonClicked(event) {
-  console.log('clicked');
-  if ('caches' in window) {
-    caches.open('user-requested')
-      .then(function(cache) {
-        cache.add('https://httpbin.org/get');
-        cache.add('/src/images/sf-boat.jpg');
-      });
-  }
-}
-
-function clearCards() {
-  while(sharedMomentsArea.hasChildNodes()) {
-    sharedMomentsArea.removeChild(sharedMomentsArea.lastChild);
-  }
-}
-
-function createCard(data) {
-  var cardWrapper = document.createElement('div');
-  cardWrapper.className = 'shared-moment-card mdl-card mdl-shadow--2dp';
-  var cardTitle = document.createElement('div');
-  cardTitle.className = 'mdl-card__title';
-  cardTitle.style.backgroundImage = 'url(' + data.image + ')';
-  cardTitle.style.backgroundSize = 'cover';
-  cardWrapper.appendChild(cardTitle);
-  var cardTitleTextElement = document.createElement('h2');
-  cardTitleTextElement.style.color = 'white';
-  cardTitleTextElement.className = 'mdl-card__title-text';
-  cardTitleTextElement.textContent = data.title;
-  cardTitle.appendChild(cardTitleTextElement);
-  var cardSupportingText = document.createElement('div');
-  cardSupportingText.className = 'mdl-card__supporting-text';
-  cardSupportingText.textContent = data.location;
-  cardSupportingText.style.textAlign = 'center';
-  // var cardSaveButton = document.createElement('button');
-  // cardSaveButton.textContent = 'Save';
-  // cardSaveButton.addEventListener('click', onSaveButtonClicked);
-  // cardSupportingText.appendChild(cardSaveButton);
-  cardWrapper.appendChild(cardSupportingText);
-  componentHandler.upgradeElement(cardWrapper);
-  sharedMomentsArea.appendChild(cardWrapper);
-}
-
-function updateUI(data) {
-  clearCards();
-  for (var i = 0; i < data.length; i++) {
-    createCard(data[i]);
-  }
-}
-
-var url = 'https://pwagram-99adf.firebaseio.com/posts.json';
-var networkDataReceived = false;
-
-fetch(url)
-  .then(function(res) {
-    return res.json();
-  })
-  .then(function(data) {
-    networkDataReceived = true;
-    console.log('From web', data);
-    var dataArray = [];
-    for (var key in data) {
-      dataArray.push(data[key]);
-    }
-    updateUI(dataArray);
-  });
-
-if ('indexedDB' in window) {
-  readAllData('posts')
-    .then(function(data) {
-      if (!networkDataReceived) {
-        console.log('From cache', data);
-        updateUI(data);
-      }
-    });
-}
-
-function sendData() {
-  fetch('https://us-central1-pwagram-99adf.cloudfunctions.net/storePostData', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    },
-    body: JSON.stringify({
-      id: new Date().toISOString(),
-      title: titleInput.value,
-      location: locationInput.value,
-      image: 'https://firebasestorage.googleapis.com/v0/b/pwagram-99adf.appspot.com/o/sf-boat.jpg?alt=media&token=19f4770c-fc8c-4882-92f1-62000ff06f16'
-    })
-  })
-    .then(function(res) {
-      console.log('Sent data', res);
-      updateUI();
-    })
-}
-
-form.addEventListener('submit', function(event) {
-  event.preventDefault();
-
-  if (titleInput.value.trim() === '' || locationInput.value.trim() === '') {
-    alert('Please enter valid data!');
-    return;
-  }
-
-  closeCreatePostModal();
-
-  if ('serviceWorker' in navigator && 'SyncManager' in window) {
-    navigator.serviceWorker.ready
-      .then(function(sw) {
-        var post = {
-          id: new Date().toISOString(),
-          title: titleInput.value,
-          location: locationInput.value
-        };
-        writeData('sync-posts', post)
-          .then(function() {
-            return sw.sync.register('sync-new-posts');
-          })
-          .then(function() {
-            var snackbarContainer = document.querySelector('#confirmation-toast');
-            var data = {message: 'Your Post was saved for syncing!'};
-            snackbarContainer.MaterialSnackbar.showSnackbar(data);
-          })
-          .catch(function(err) {
-            console.log(err);
-          });
-      });
-  } else {
-    sendData();
-  }
 });
+
+function loadPhotos() {
+
+}
+
+loadPhotos();
