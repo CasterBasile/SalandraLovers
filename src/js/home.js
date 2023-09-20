@@ -26,3 +26,22 @@ function changeBackgroundImage() {
 
 changeBackgroundImage();
 
+/*Finestra di avvio*/
+
+function apriPaginaWeb() {
+    // Reindirizza l'utente alla pagina web desiderata
+    window.location.href = "tuapaginaweb.html";
+}
+
+function chiudiFinestra() {
+    // Chiudi manualmente la finestra e aggiorna lo stato
+    document.getElementById("startup-window").style.display = "none";
+    localStorage.setItem("finestraAvvioChiusa", "true");
+}
+
+// Verifica se la finestra deve essere mostrata
+if (!localStorage.getItem("finestraAvvioChiusa")) {
+    document.getElementById("startup-window").style.display = "block";
+    // Chiudi automaticamente dopo 5 secondi
+    setTimeout(chiudiFinestra, 5000);
+}
