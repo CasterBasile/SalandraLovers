@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giochi Quiz</title>
+</head>
+<body>
+  <h1>Benvenuto al Quiz!</h1>
+  <p>Inserisci il tuo nome e clicca su "GIOCA" per iniziare.</p>
+  <input type="text" id="nomeGiocatore" placeholder="Inserisci il tuo nome">
+  <button id="avviaGioco">GIOCA</button>
+
+  <div id="domande" style="display: none;">
+    <h2>Domanda 1</h2>
+    <p>Questa è la prima domanda?</p>
+    <input type="radio" name="risposta1" value="corretta"> Risposta Corretta<br>
+    <input type="radio" name="risposta1" value="sbagliata"> Risposta Sbagliata<br>
+
+    <h2>Domanda 2</h2>
+    <p>Questa è la seconda domanda?</p>
+    <input type="radio" name="risposta2" value="corretta"> Risposta Corretta<br>
+    <input type="radio" name="risposta2" value="sbagliata"> Risposta Sbagliata<br>
+
+    <!-- Aggiungi altre domande qui -->
+
+    <button id="fineGioco">Fine Gioco</button>
+  </div>
+
+  <h1>Classifica Finale</h1>
+  <ol id="classifica">
+    <!-- Qui verranno inseriti dinamicamente gli elementi della classifica -->
+  </ol>
+
+  <script src="/src/js/salandraQuiz.js"></script>
+</body>
+</html>
