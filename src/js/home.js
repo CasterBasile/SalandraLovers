@@ -46,19 +46,23 @@ function mostraPopup() {
     }, 1000); // Esegui il conto alla rovescia ogni 1 secondo
 }
 
-// Funzione per chiudere la finestra pop-up
 function chiudiPopup() {
     const popupContainer = document.getElementById("popup-container");
     popupContainer.style.display = "none";
+
+    // Salva nello storage locale che la finestra è stata chiusa
+    localStorage.setItem("finestraPopupChiusa", "true");
 }
 
-// Funzione per reindirizzare l'utente
 function apriPaginaWeb() {
     // Reindirizza l'utente alla pagina web desiderata
     window.location.href = "/events";
 }
 
-// Mostra la finestra pop-up all'avvio dell'applicazione
+// Mostra la finestra pop-up solo se non è stata chiusa in precedenza
 window.onload = function () {
-    mostraPopup();
+    const finestraPopupChiusa = localStorage.getItem("finestraPopupChiusa");
+    if (!finestraPopupChiusa) {
+        mostraPopup();
+    }
 };

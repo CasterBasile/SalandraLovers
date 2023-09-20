@@ -212,7 +212,7 @@ body {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    background-color: #943126;
+    background-color: white;
     text-align: center;
     border-radius: 10px;
     display: inline-block;
@@ -220,23 +220,16 @@ body {
     max-width: 80%; /* Imposta la larghezza massima del contenuto */
 }
 
-#popup-content img {
-    max-width: 100%; /* Fai sì che l'immagine si adatti alla larghezza del contenuto */
-    height: auto; /* Imposta l'altezza in base alla larghezza mantenendo l'aspetto originale */
-}
-
 #close-button {
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 50px;
+    font-size: 20px;
     cursor: pointer;
-    color: white;
 }
 
 #countdown {
-    font-size: 18px;
+    font-size: 35px;
     margin-top: 10px;
-    color: white;
-
+    color: white; /* Cambia il colore del testo qui */
 }
