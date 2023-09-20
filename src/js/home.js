@@ -50,18 +50,18 @@ function chiudiPopup() {
     const popupContainer = document.getElementById("popup-container");
     popupContainer.style.display = "none";
 
-    // Salva nello storage locale che la finestra è stata chiusa
-    localStorage.setItem("finestraPopupChiusa", "true");
+    // Salva nello sessionStorage che la finestra è stata chiusa
+    sessionStorage.setItem("finestraPopupChiusa", "true");
 }
 
 function apriPaginaWeb() {
     // Reindirizza l'utente alla pagina web desiderata
-    window.location.href = "/events";
+    window.location.href = "tuapaginaweb.html";
 }
 
-// Mostra la finestra pop-up solo se non è stata chiusa in precedenza
-window.onload = function () {
-    const finestraPopupChiusa = localStorage.getItem("finestraPopupChiusa");
+    // Mostra la finestra pop-up solo se non è stata chiusa in precedenza
+    window.onload = function () {
+    const finestraPopupChiusa = sessionStorage.getItem("finestraPopupChiusa");
     if (!finestraPopupChiusa) {
         mostraPopup();
     }
