@@ -204,7 +204,7 @@ body {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    background-color: white;
+    background-color: #943126;
     text-align: center;
     border-radius: 10px;
     display: inline-block;
@@ -216,14 +216,14 @@ body {
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 20px;
+    font-size: 35px;
     cursor: pointer;
 }
 
 #countdown {
     font-size: 18px;
     margin-top: 10px;
-    color: red; /* Cambia il colore del testo qui */
+    color: white; /* Cambia il colore del testo qui */
 }
 
 /* Stile per l'immagine */
