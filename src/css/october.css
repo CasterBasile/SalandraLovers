@@ -352,4 +352,29 @@
     max-width: 100%; /* Imposta la larghezza massima al 100% del contenitore */
     height: auto; /* Imposta l'altezza in modo automatico per mantenere l'aspetto originale */
   }
+
+  /* Stile delle frecce di navigazione */
+.navigazione {
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .frecce {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  .frecce:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
   
