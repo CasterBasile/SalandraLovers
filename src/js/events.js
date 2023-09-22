@@ -52,8 +52,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     eventLinkButton.addEventListener("click", function() {
-        const link = eventLinkButton.getAttribute("data-link");
-        window.open(link, "_blank");
-    });
+      const link = eventLinkButton.getAttribute("data-link");
+      window.location.href = link;
+  });  
 });
 
