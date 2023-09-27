@@ -1,8 +1,8 @@
 importScripts('/src/js/idb.js');
 importScripts('/src/js/utility.js');
 
-var CACHE_STATIC_NAME = 'static-v38';
-var CACHE_DYNAMIC_NAME = 'dynamic-v18';
+var CACHE_STATIC_NAME = 'static-v39';
+var CACHE_DYNAMIC_NAME = 'dynamic-v19';
 var STATIC_FILES = [
   '/',
   '/index.html',
@@ -85,6 +85,7 @@ function isInArray(string, array) {
 self.addEventListener('fetch', function (event) {
   var dataUrlPosts = 'https://salandra-lovers-default-rtdb.firebaseio.com/posts';
   var dataUrlEvents = 'https://salandra-lovers-default-rtdb.firebaseio.com/events';
+  var dataUrlNews = 'https://salandra-lovers-default-rtdb.firebaseio.com/news';
 
   if (event.request.url.indexOf(dataUrlPosts) > -1) {
     // Logica per gestire la sezione dei posts
@@ -115,6 +116,23 @@ self.addEventListener('fetch', function (event) {
           .then(function (data) {
             for (var key in data) {
               writeData('events', data[key]);
+            }
+          });
+        return res;
+      })
+    );
+  } else if (event.request.url.indexOf(dataUrlNews) > -1) {
+    // Logica per gestire la sezione delle news
+    event.respondWith(fetch(event.request)
+      .then(function (res) {
+        var clonedRes = res.clone();
+        clearAllData('news')
+          .then(function () {
+            return clonedRes.json();
+          })
+          .then(function (data) {
+            for (var key in data) {
+              writeData('news', data[key]);
             }
           });
         return res;
