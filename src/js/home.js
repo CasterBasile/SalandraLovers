@@ -56,7 +56,7 @@ function chiudiPopup() {
 
 function apriPaginaWeb() {
     // Reindirizza l'utente alla pagina web desiderata
-    window.location.href = "tuapaginaweb.html";
+    window.location.href = "/events/october.html";
 }
 
     // Mostra la finestra pop-up solo se non è stata chiusa in precedenza
