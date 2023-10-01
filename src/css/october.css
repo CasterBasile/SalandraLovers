@@ -378,3 +378,6 @@
     background-color: rgba(0, 0, 0, 0.8);
   }
   
+  video {
+    width: 100%; /* Imposta la larghezza desiderata */
+}
