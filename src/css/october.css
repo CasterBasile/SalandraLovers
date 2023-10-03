@@ -381,3 +381,38 @@
   video {
     width: 100%; /* Imposta la larghezza desiderata */
 }
+
+/* Stili per la griglia delle foto */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Due colonne */
+  grid-gap: 10px; /* Spazio tra le immagini */
+  justify-items: center; /* Centra le immagini orizzontalmente */
+}
+
+.photo-grid a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.photo-grid img {
+  max-width: 100%; /* Per adattarsi alle colonne */
+  height: auto;
+}
+
+/* Cambia il colore di sfondo della lightbox */
+.lb-overlay {
+  background-color: #943126; /* Sostituisci con il colore desiderato */
+}
+
+/* Cambia il colore di sfondo del contenitore delle immagini nella lightbox */
+.lb-dataContainer {
+  background-color: #943126; /* Sostituisci con il colore desiderato */
+}
+
+/* Cambia il colore di sfondo dell'intera lightbox */
+.lb-outerContainer {
+  background-color: #943126; /* Sostituisci con il colore desiderato */
+}
+
