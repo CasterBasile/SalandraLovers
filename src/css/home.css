@@ -201,16 +201,19 @@ body {
 }
 
 #popup-content {
-    position: relative;
+    position: fixed;
     top: 50%;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: #943126;
     text-align: center;
     border-radius: 10px;
     display: inline-block;
     padding: 20px;
-    max-width: 80%; /* Imposta la larghezza massima del contenuto */
+    max-width: 30%; /* Modifica questo valore in base alle dimensioni desiderate */
 }
+
+
 
 #close-button {
     position: absolute;
