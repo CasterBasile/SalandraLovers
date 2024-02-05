@@ -56,7 +56,7 @@ function chiudiPopup() {
 
 function apriPaginaWeb() {
     // Reindirizza l'utente alla pagina web desiderata
-    window.location.href = "https://www.facebook.com/events/2569970349828377?acontext=%7B%22event_action_history%22%3A[%7B%22surface%22%3A%22external_search_engine%22%7D%2C%7B%22mechanism%22%3A%22your_upcoming_events_unit%22%2C%22surface%22%3A%22bookmark%22%7D]%2C%22ref_notif_type%22%3Anull%7D&locale=it_IT";
+    window.location.href = "https://www.facebook.com/media/set/?set=a.122126985974124507&type=3&locale=it_IT";
 }
 
     // Mostra la finestra pop-up solo se non è stata chiusa in precedenza
