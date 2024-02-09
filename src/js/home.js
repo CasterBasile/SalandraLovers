@@ -56,7 +56,7 @@ function chiudiPopup() {
 
 function apriPaginaWeb() {
     // Reindirizza l'utente alla pagina web desiderata
-    window.location.href = "https://www.facebook.com/media/set/?set=a.122126985974124507&type=3&locale=it_IT";
+    window.location.href = "https://fb.me/e/1g2x9tnr6";
 }
 
     // Mostra la finestra pop-up solo se non è stata chiusa in precedenza
