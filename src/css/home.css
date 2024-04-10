@@ -210,7 +210,7 @@ body {
     border-radius: 10px;
     display: inline-block;
     padding: 20px;
-    max-width: 90%; /* Modifica questo valore in base alle dimensioni desiderate */
+    max-width: 150%; /* Modifica questo valore in base alle dimensioni desiderate */
 }
 
 

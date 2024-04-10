@@ -56,7 +56,7 @@ function chiudiPopup() {
 
 function apriPaginaWeb() {
     // Reindirizza l'utente alla pagina web desiderata
-    window.location.href = "https://wa.me/3281448269";
+    window.location.href = "https://wa.me/393281448269";
 }
 
     // Mostra la finestra pop-up solo se non è stata chiusa in precedenza
