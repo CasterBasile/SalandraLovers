@@ -1,8 +1,8 @@
 importScripts('/src/js/idb.js');
 importScripts('/src/js/utility.js');
 
-var CACHE_STATIC_NAME = 'static-v60';
-var CACHE_DYNAMIC_NAME = 'dynamic-v60';
+var CACHE_STATIC_NAME = 'static-v61';
+var CACHE_DYNAMIC_NAME = 'dynamic-v61';
 var STATIC_FILES = [
   '/',
   '/index.html',
@@ -11,6 +11,7 @@ var STATIC_FILES = [
   '/events/index.html',
   '/poiPage/index.html',
   '/info/index.html',
+  '/supportUS/index.html',
   '/offline.html',
   '/src/js/app.js',
   '/src/js/feed.js',
