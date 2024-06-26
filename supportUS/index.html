@@ -22,9 +22,34 @@
       text-align: center;
       margin-top: 20px;
     }
-    .donation-button {
+    .donation-button, .copy-button {
       display: inline-block;
+      margin: 10px 0;
     }
+    .copy-button {
+      cursor: pointer;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    .copy-button:hover {
+      background-color: #45a049;
+    }
+    .whatsapp-button {
+        background-color: #25D366;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        }
+
+    .whatsapp-button:hover {
+        background-color: #1EBE54;
+        }
+
   </style>
 </head>
 <body>
@@ -60,8 +85,9 @@
             <p>Grazie per aver visitato la nostra sezione dedicata al supporto. <br> Ci dedichiamo con passione a valorizzare e preservare il Bosco della Salandra, <br> un tesoro naturale e storico del nostro territorio.
                 Il tuo contributo è fondamentale per aiutarci a proteggere questo patrimonio unico, promuovere la conoscenza dei suoi reperti archeologici e mantenere la biodiversità che lo caratterizza. <br>Ogni piccolo gesto, che sia una donazione, una condivisione o il tuo tempo come volontario, può fare una grande differenza.<br>
               <section id="about-app" class="donation-section">
-                <h3><b>Donazione</b></h3>
-                <p>Effettua una donazione tramite PayPal</p>
+                <h3><b>Donazione tramite PayPal</b></h3>
+                <p>Effettua una donazione in modo semplice e veloce tramite PayPal, cliccando sul tasto "Donate" qui sotto. Potrai scegliere se effettuare una donazione periodica-mensile oppure una sola donazione. </p>
+
                 <!-- Pulsante PayPal -->
                 <div class="donation-button">
                   <form action="https://www.paypal.com/donate" method="post" target="_top">
@@ -73,10 +99,30 @@
                     <img alt="" border="0" src="https://www.paypal.com/en_IT/i/scr/pixel.gif" width="1" height="1">
                   </form>
                 </div>
+                
+                <h3><b>Dona il 5x1000</b></h3>
+                <p>Puoi sostenere il Bosco della Salandra donando il 5x1000 alla nostra associazione. È semplice e non ti costa nulla!</p>
+                <p><b>Codice Fiscale: 95334860632</b></p>
+                <p>Segui questi semplici passi:</p>
+                <ol>
+                  <li>Compila il modulo 730, il CU oppure il modello Unico.</li>
+                  <li>Firma nel riquadro indicato come "Sostegno del volontariato e delle altre organizzazioni non lucrative di utilità sociale".</li>
+                  <li>Indica il nostro codice fiscale: <b>95334860632</b>.</li>
+                </ol>
+                
+                <h3><b>Donazione tramite Bonifico</b></h3>
+                <p>Puoi effettuare una donazione anche tramite bonifico bancario utilizzando il seguente IBAN:</p>
+                <p><b>IBAN: IT86T0306909606100000402905</b></p>
+                <button class="copy-button" onclick="copyIBAN()">Copia IBAN</button>
+                <p>Intestato a: Associazione Salandra Lovers</p>
+                <h3><b>Contattaci su WhatsApp</b></h3>
+                    <p>Hai avuto problemi coi precedenti metodi? Contattaci su WhatsApp al <b>+39 328 144 8269</b> cliccando sul pulsante qui sotto.</p>
+                    <button class="whatsapp-button" onclick="openWhatsApp()">Chatta su WhatsApp</button>
+                    <p>Puoi contattarci anche per aiutarci con la pulizia del bosco e altre attività di volontariato.</p>
               </section>
             <a href="/" class="app-logo-link">
               <img src="/src/images/icons/app-icon-96x96.png" alt="Logo" class="app-logo">
-          </a>
+            </a>
           </div>
         </div>
         <div class="mdl-grid">
@@ -91,5 +137,23 @@
   <script src="/src/js/promise.js"></script>
   <script src="/src/js/fetch.js"></script>
   <script src="/src/js/info.js"></script>
+  <script>
+    function copyIBAN() {
+      const IBAN = "IT86T0306909606100000402905";
+      navigator.clipboard.writeText(IBAN).then(function() {
+        alert("IBAN copiato negli appunti!");
+      }, function(err) {
+        alert("Errore nella copia dell'IBAN: ", err);
+      });
+    }
+
+    function openWhatsApp() {
+    const phoneNumber = "+393281448269";
+    const message = "Ciao, ho bisogno di assistenza per le donazioni.";
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  }
+
+  </script>
 </body>
 </html>
