@@ -1,0 +1,251 @@
+/* Pulsanti rettangolari */
+.link-button {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin: 10px 0;
+  background-color: #f0f0f0;
+  border: 2px solid #004400;
+  border-radius: 10px;
+  color: #004400;
+  text-decoration: none;
+  font-size: 18px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.link-button:hover {
+  background-color: #004400;
+  color: #fff;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* Carosello */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel img {
+  width: 100%;
+  flex: 0 0 100%;
+}
+
+/* Logo in alto */
+.title-logo {
+  width: 25px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+/* Nome Salandra Lovers */
+h1 {
+  text-align: center;
+  color: #004400; /* Verde */
+  font-size: 24px;
+}
+
+h2 {
+  text-align: center;
+  color: #004400; /* Verde */
+  font-size: 24px;
+}
+
+/* Banner link */
+.link-list {
+  max-width: 600px; /* Limita la larghezza dei link */
+  margin: 0 auto; /* Centra i banner */
+  padding: 0 20px; /* Margine laterale */
+}
+
+/* Logo in basso */
+.logo img {
+  width: 80px; /* Dimensione ridotta */
+  display: block;
+  margin: 20px auto; /* Centrato */
+}
+
+/* Stile per il titolo "Contatti" */
+h1 {
+  text-align: center;
+  color: #004400; /* Verde */
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+/* Centra i bottoni nella pagina contatti */
+.button-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Mantieni lo stile dei bottoni uguale */
+.link-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 30px;
+  margin: 10px 0;
+  background-color: #f0f0f0;
+  border: 2px solid #004400;
+  border-radius: 10px;
+  color: #004400;
+  text-decoration: none;
+  font-size: 18px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.link-button:hover {
+  background-color: #004400;
+  color: #fff;
+}
+
+
+.link-button-contatti {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 30px; /* Impostato per una dimensione simile agli altri bottoni */
+  margin: 10px 0;
+  background-color: #004400; /* Sfondo verde */
+  border: 2px solid #004400;
+  border-radius: 10px;
+  color: #fff; /* Colore del testo bianco */
+  font-size: 18px; /* Stessa dimensione del font degli altri bottoni */
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.link-button-contatti:hover {
+  background-color: #fff;
+  color: #004400; /* Colore del testo verde al passaggio del mouse */
+}
+
+/* Contenitore del logo centrato */
+.logo-container {
+  display: flex;
+  justify-content: center;  /* Centra orizzontalmente */
+  align-items: center;      /* Centra verticalmente */
+  margin-top: 20px;         /* Margine per distanziare dal resto del contenuto */
+}
+
+/* Logo ridotto */
+.logo-small {
+  width: 100px; /* Imposta la larghezza del logo */
+  height: auto; /* Mantiene le proporzioni */
+}
+
+/* Contenitore dei bottoni centrato */
+.buttons-container {
+  display: flex;
+  justify-content: center;  /* Centra orizzontalmente */
+  align-items: center;      /* Centra verticalmente */
+  gap: 20px;                /* Spazio tra i bottoni */
+  margin-top: 20px;         /* Margine per distanziare dal resto del contenuto */
+}
+
+/* Stili per i bottoni */
+.contact-button {
+  width: auto;
+  height: 40px; /* Imposta un'altezza fissa */
+  padding: 10px 20px;
+  background-color: #004400;
+  border: 2px solid #004400;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+  background-color: white;
+  color: #004400;
+}
+
+
+/* Contenitore del banner */
+.testimonial-banner {
+  width: 100%;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  padding: 20px 0;
+}
+
+/* Scorrimento del contenuto */
+.testimonial-content {
+  display: flex;
+  flex-wrap: nowrap;
+  animation: scrollTestimonials 15s linear infinite;
+}
+
+/* Stili delle testimonianze */
+.testimonial-item {
+  min-width: 100%;
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-style: italic;
+  color: #333;
+}
+
+.testimonial-item p {
+  margin: 0;
+}
+
+/* Animazione per lo scorrimento */
+@keyframes scrollTestimonials {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+iframe {
+  width: 100%;
+  max-width: 560px;  /* Imposta la larghezza massima del video */
+  height: 315px;
+}
+
+.about-association {
+  text-align: center;
+  color: #004400; /* Verde */
+  margin: 20px;
+}
+
+.about-association h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.about-association p {
+  font-size: 18px;
+  line-height: 1.6;
+}
