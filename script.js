@@ -1,20 +1,43 @@
 let currentIndex = 0;
+
+// Seleziona le slide del carosello
 const track = document.querySelector(".carousel-track");
 const slides = Array.from(track.children);
 
+// Funzione per far scorrere le testimonianze
 function moveCarousel() {
-  currentIndex = (currentIndex + 1) % slides.length;
-  const moveAmount = -100 * currentIndex;
+  currentIndex = (currentIndex + 1) % slides.length; // Incrementa ciclicamente l'indice
+  const moveAmount = -100 * currentIndex; // Calcola la traduzione del carosello
   track.style.transform = `translateX(${moveAmount}%)`;
 }
 
-// Scorrimento automatico ogni 3 secondi
-setInterval(moveCarousel, 3000);
+// Avvia lo scorrimento automatico ogni 3 secondi
+let autoScroll = setInterval(moveCarousel, 3000);
 
+// Pausa e ripresa del carosello al passaggio del mouse
 const banner = document.querySelector('.testimonial-banner');
 banner.addEventListener('mouseenter', () => {
-  document.querySelector('.testimonial-content').style.animationPlayState = 'paused';
+  clearInterval(autoScroll); // Ferma l'animazione
 });
 banner.addEventListener('mouseleave', () => {
-  document.querySelector('.testimonial-content').style.animationPlayState = 'running';
+  autoScroll = setInterval(moveCarousel, 3000); // Riavvia l'animazione
+});
+
+
+// Animazione del contatore
+document.addEventListener("DOMContentLoaded", function () {
+  const counterElement = document.getElementById("counter");
+  const target = 327; // Valore finale del contatore
+  let count = 0;
+  const speed = 10; // Velocità dell'animazione in millisecondi
+
+  function updateCounter() {
+    if (count < target) {
+      count++;
+      counterElement.textContent = count; // Aggiorna il testo
+      setTimeout(updateCounter, speed);
+    }
+  }
+
+  updateCounter();
 });
