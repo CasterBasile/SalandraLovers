@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Salandra Lovers</title>
+  <title>Il Bosco Racconta</title>
+  <script src="files/turnjs/turn.min.js"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -25,10 +26,9 @@
       max-width: 900px;
       width: 100%;
     }
-    iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
+    #flipbook {
+      width: 800px;
+      height: 500px;
     }
     .download-btn {
       display: inline-block;
@@ -53,9 +53,34 @@
 <body>
   <div class="container">
     <h1>Il Bosco Racconta</h1>
-    <iframe src="https://www.flipbookpdf.net/web/site/80ccb45ab8cb8371fe939c57891f0af4419ad3e7202502.pdf.html" allowfullscreen></iframe>
+    <div id="flipbook">
+      <div class="page"><img src="files/pages/page1.jpg"></div>
+      <div class="page"><img src="files/pages/page2.jpg"></div>
+      <div class="page"><img src="files/pages/page3.jpg"></div>
+      <div class="page"><img src="files/pages/page4.jpg"></div>
+      <div class="page"><img src="files/pages/page5.jpg"></div>
+      <div class="page"><img src="files/pages/page6.jpg"></div>
+      <div class="page"><img src="files/pages/page7.jpg"></div>
+      <div class="page"><img src="files/pages/page8.jpg"></div>
+      <div class="page"><img src="files/pages/page9.jpg"></div>
+      <div class="page"><img src="files/pages/page10.jpg"></div>
+      <div class="page"><img src="files/pages/page11.jpg"></div>
+      <div class="page"><img src="files/pages/page12.jpg"></div>
+      <div class="page"><img src="files/pages/page13.jpg"></div>
+      <!-- Aggiungi altre pagine convertendo il PDF in immagini -->
+    </div>
     <a href="files/il bosco racconta.pdf" class="download-btn" download>Scarica Ora</a>
   </div>
   <img src="logo.png" alt="Logo Salandra Lovers" class="logo">
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      $("#flipbook").turn({
+        width: 800,
+        height: 500,
+        autoCenter: true
+      });
+    });
+  </script>
 </body>
 </html>
