@@ -27,7 +27,7 @@ banner.addEventListener('mouseleave', () => {
 // Animazione del contatore
 document.addEventListener("DOMContentLoaded", function () {
   const counterElement = document.getElementById("counter");
-  const target = 327; // Valore finale del contatore
+  const target = 512; // Valore finale del contatore
   let count = 0;
   const speed = 10; // Velocità dell'animazione in millisecondi
 
