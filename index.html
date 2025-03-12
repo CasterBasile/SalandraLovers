@@ -4,102 +4,123 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Salandra Lovers</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="logo.png" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1> Salandra Lovers</h1>
-    <h2> Link Utili </h2>
-    <div class="link-list">
-      <a href="https://www.salandralovers.it/prenotati" target="_blank" class="link-button">
-        <img src="logo.png" alt="Donate Icon" class="icon" /> Evento 16 Marzo - Prenotati Qui
-      </a>
-      <a href="https://www.salandralovers.it/giornalino" target="_blank" class="link-button">
-        <img src="logo.png" alt="Donate Icon" class="icon" /> Sfoglia il Giornalino
-      </a>
-      <a href="https://fondoambiente.it/luoghi/eremo-di-santa-maria-di-pietraspaccata?ldc" target="_blank" class="link-button">
-        <img src="icons/vote.png" alt="Vote Icon" class="icon" /> Vota qui l'eremo di Pietraspaccata
-      </a>
-      <a href="https://www.gofundme.com/f/rigeneriamo-insieme-il-bosco-della-salandra" target="_blank" class="link-button">
-        <img src="icons/donate.png" alt="Donate Icon" class="icon" /> Sostienici su GoFundMe
-      </a>
-      <a href="/newsletter" target="_blank" class="link-button">
-        <img src="icons/mail.png" alt="Newsletter Icon" class="icon" /> Iscriviti alla Newsletter
-      </a>
-      <a href="https://www.facebook.com/salandraloversboscoforagnano/" target="_blank" class="link-button">
-        <img src="icons/facebook.png" alt="Facebook Icon" class="icon" /> Pagina Facebook Salandra Lovers
-      </a>
-      <a href="https://www.instagram.com/salandralovers/" target="_blank" class="link-button">
-        <img src="icons/instagram.png" alt="Instagram Icon" class="icon" /> Pagina Instagram Salandra Lovers
-      </a>
-      <a href="https://www.facebook.com/groups/950471052240086?locale=it_IT" target="_blank" class="link-button">
-        <img src="icons/group.png" alt="Group Icon" class="icon" /> Gruppo Facebook Privato: Salviamo il Bosco della Salandra
-      </a>
-      <!-- Bottone per la pagina contatti -->
-      <a href="contatti.html">
-        <div class="button-container">
-          <a href="contatti.html" class="link-button-contatti">Contatti - Chi siamo</a>
-        </div>
-        <div class="event-counter">
-          <h2>
-            Hanno partecipato ai nostri eventi 
-            <span id="counter" class="counter">0</span>
-            persone in un solo anno e tutti ne sono rimasti entusiasti!
-          </h2>
-        </div>        
-        
-      </a>
-    </div>
-    <h1>Dicono di noi!</h1>
-    <div class="testimonial-banner">
-      <div class="testimonial-content">
-        <div class="testimonial-item">
-          <p>"Un'esperienza unica nel cuore del Bosco della Salandra. Ho partecipato a un evento dell'associazione e ho imparato tanto sulla natura e sulla sua tutela." - Marco R.</p>
-        </div>
-        <div class="testimonial-item">
-          <p>"Ogni angolo di questo bosco racconta una storia. Grazie a Salandra Lovers per averlo reso ancora più accessibile a tutti." - Giulia P.</p>
-        </div>
-        <div class="testimonial-item">
-          <p>"La passione di questo gruppo è contagiosa. Mi hanno mostrato come il rispetto per l'ambiente può davvero fare la differenza." - Luca T.</p>
-        </div>
-        <div class="testimonial-item">
-          <p>"Un'iniziativa che unisce persone e natura. Salandra Lovers è davvero un punto di riferimento per chi vuole preservare questo tesoro." - Laura F.</p>
-        </div>
-        <div class="testimonial-item">
-          <p>"Contribuire al progetto Salandra Lovers è stato un privilegio. Ogni passo in questo bosco è un incontro con la storia e la bellezza." - Antonio M.</p>
-        </div>
-        <div class="testimonial-item">
-          <p>"Ho scoperto un tesoro nascosto nel Bosco della Salandra grazie a questa fantastica associazione. È stato emozionante!" - Anna L.</p>
-        </div>
-        <div class="testimonial-item">
-          <p>"È stato meraviglioso vedere quanto lavoro e dedizione ci siano dietro la salvaguardia del Bosco della Salandra." - Elena G.</p>
-        </div>
-        <div class="testimonial-item">
-          <p>"Passeggiare nel bosco è diventata un’esperienza indimenticabile grazie a queste guide straordinarie." - Davide C.</p>
+  <header class="bg-success text-white text-center p-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="logo-container d-flex align-items-center">
+        <img src="logo.png" alt="Logo Salandra Lovers" class="logo me-2" width="50" />
+        <div>
+          <h1 class="m-0">Salandra Lovers</h1>
+          <p class="m-0 fs-6">Natura e cultura per la comunità</p>
         </div>
       </div>
+      <nav>
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link text-white" href="#about">Chi Siamo</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#events">Eventi</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#support">Sostienici</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#contacts">Contatti</a></li>
+        </ul>
+      </nav>
     </div>
-    <div class="carousel">
-      <div class="carousel-track">
-        <img src="photos/photo1.jpg" alt="Photo 1" />
-        <img src="photos/photo2.jpg" alt="Photo 2" />
-        <img src="photos/photo3.jpg" alt="Photo 3" />
-        <img src="photos/photo4.jpg" alt="Photo 4" />
-        <img src="photos/photo5.jpg" alt="Photo 5" />
-        <img src="photos/photo6.jpg" alt="Photo 6" />
-        <img src="photos/photo7.jpg" alt="Photo 7" />
-        <img src="photos/photo8.jpg" alt="Photo 8" />
-        <img src="photos/photo9.jpg" alt="Photo 9" />
-        <img src="photos/photo10.jpg" alt="Photo 10" />
-      </div>
-    </div>
+  </header>
+  
 
-    
-    <div class="logo">
-      <img src="logo.png" alt="Logo Salandra Lovers" onclick="location.reload()" />
+  <section id="hero" class="text-center py-5 bg-light">
+    <h2>Unisciti a noi per proteggere il Bosco della Salandra</h2>
+    <p>Scopri il nostro impegno per la salvaguardia della natura e partecipa alle nostre attività.</p>
+    <a href="#events" class="btn btn-success">Scopri di più</a>
+  </section>
+
+  <section id="about" class="container py-5">
+    <h2>Chi Siamo</h2>
+    <p><strong>Salandra Lovers</strong> è un’associazione che dal 2023 si dedica alla riqualifica e valorizzazione del <strong>Bosco della Salandra</strong>, un suggestivo castagneto situato a <strong>Marano di Napoli</strong>. Il nostro obiettivo è restituire al bosco il suo splendore attraverso azioni concrete: <strong>ripuliamo l’area dai rifiuti, riapriamo i sentieri abbandonati</strong> e organizziamo eventi per far conoscere questo tesoro naturale e storico. Crediamo nella tutela dell’ambiente e nel coinvolgimento della comunità per rendere il Bosco della Salandra un luogo accessibile e fruibile da tutti.</p>
+  </section>
+
+  <section id="events" class="container py-5">
+    <h2>Prossimi Eventi</h2>
+    <div class="card p-3">
+      <h3>Evento 16 Marzo - Evento a numero chiuso</h3>
+      <p><strong>Mindfulness Experience nel Bosco della Salandra</strong></p>
+      <p>Ritrovare il proprio benessere attraverso il contatto con la natura. Anche una semplice passeggiata in un bosco può avere un impatto straordinario sulla salute, riducendo stress, ansia, depressione e frustazione. <b>Il Bagno di Foresta</b> è un'esperienza immersiva che coinvolge tutti i cinque sensi, permettendoti di riconnetterti profondamente con la Natura e riscoprirne la Bellezza e la Sacralità.</p>
+
+      <a href="https://www.salandralovers.it/prenotati" target="_blank" class="btn btn-primary">Prenotati Qui</a>
     </div>
-  </div>
-  <script src="script.js"></script>
+  </section>
+
+  <section id="support" class="bg-light py-5 text-center">
+    <h2>Come puoi aiutarci?</h2>
+    <p>Vota l'eremo di Pietraspaccata e aiutaci a renderlo un luogo del cuore FAI. Effettua una donazione su GoFundMe o su Paypal a Sostegno della nostra associazione</p>
+    <div class="d-flex justify-content-center gap-3">
+      <a href="https://fondoambiente.it/luoghi/eremo-di-santa-maria-di-pietraspaccata?ldc" target="_blank" class="btn btn-warning">Vota l'Eremo</a>
+      <a href="https://www.gofundme.com/f/rigeneriamo-insieme-il-bosco-della-salandra" target="_blank" class="btn btn-danger">Dona su GoFundMe</a>
+      <a href="https://www.paypal.com/donate/?business=salandralovers@gmail.com" target="_blank" class="btn btn-danger">Dona su PayPal</a>
+    </div>
+  </section>
+
+  <section id="Newsletter" class="bg-light py-5 text-center">
+    <h2>Newsletter</h2>
+    <p>Iscriviti alla Newsletter della nostra associazione per restare aggiornato sugli eventi e sui progressi!</p>
+    <div class="d-flex justify-content-center gap-3">
+      <a href="https://salandralovers.it/newsletter" target="_blank" class="btn btn-info">Iscriviti alla Newsletter</a>
+    </div>
+  </section>
+  <section id="giornalino" class="bg-light py-5 text-center">
+    <h2>Il Bosco Racconta - Il giornalino della nostra associazione!</h2>
+    <p>Leggi il giornalino per scoprire le ultime novità sulla nostra associazione e sul Bosco della Salandra.</p>
+    <div class="d-flex justify-content-center gap-3">
+      <a href="https://salandralovers.it/giornalino" target="_blank" class="btn btn-secondary">Sfoglia il Giornalino</a>
+    </div>
+  </section>
+  
+  <section id="gallery" class="container py-5">
+    <h2>Il Bosco della Salandra in immagini</h2>
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="photos/photo1.jpg" class="d-block w-100" alt="Photo 1" />
+        </div>
+        <div class="carousel-item">
+          <img src="photos/photo2.jpg" class="d-block w-100" alt="Photo 2" />
+        </div>
+        <div class="carousel-item">
+          <img src="photos/photo3.jpg" class="d-block w-100" alt="Photo 3" />
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </section>
+
+  <footer id="contacts" class="text-center bg-dark text-white p-4">
+    <h2>Contattaci</h2>
+    <p><strong>Email:</strong> salandralovers@gmail.com</p>
+    <p><strong>Seguici sui social:</strong></p>
+    <div>
+      <a href="https://www.facebook.com/salandraloversboscoforagnano/" target="_blank" class="btn btn-primary">Facebook</a>
+      <a href="https://www.instagram.com/salandralovers/" target="_blank" class="btn btn-danger">Instagram</a>
+      <a href="https://wa.me/393281448269" target="_blank" class="btn btn-success">WhatsApp</a>
+      <a href="https://www.facebook.com/groups/950471052240086?locale=it_IT" target="_blank" class="btn btn-primary">Gruppo Privato Facebook</a>
+    </div>
+  </footer>
+  
 </body>
 </html>
