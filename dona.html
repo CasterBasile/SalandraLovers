@@ -16,7 +16,30 @@
     h1, h2, h3 {
       font-family: 'Playfair Display', serif;
     }
+    .btn-donation {
+      font-weight: bold;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .btn-donation:hover {
+      transform: scale(1.1); /* Ingrandisce il tasto */
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Aggiunge un'ombra */
+    }
+    .btn-donation:active {
+      transform: scale(1); /* Ripristina la dimensione normale al click */
+    }
+    .btn-danger {
+      background-color: #ff4c4c;
+      border-color: #ff4c4c;
+    }
+    .btn-danger:hover {
+      background-color: #e04444;
+      border-color: #e04444;
+    }
   </style>
+  
 </head>
 <body>
   <header class="bg-success text-white text-center p-3">
@@ -31,22 +54,20 @@
       <nav>
         <ul class="nav">
           <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#support">Sostienici</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#contacts">Contatti</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <section id="support" class="bg-light py-5 text-center">
-    <h2>Come puoi aiutarci?</h2>
-    <p>Vota l'eremo di Pietraspaccata e aiutaci a renderlo un luogo del cuore FAI. Effettua una donazione su GoFundMe o su Paypal a sostegno della nostra associazione.</p>
+    <h2>Effettua una donazione</h2>
+    <p>Aiutaci nel nostro progetto di riqualifica del Bosco della Salandra. Effettua una donazione su GoFundMe o PayPal</p>
     <div class="d-flex justify-content-center gap-3">
-      <a href="https://fondoambiente.it/luoghi/eremo-di-santa-maria-di-pietraspaccata?ldc" target="_blank" class="btn btn-warning">Vota l'Eremo</a>
-      <a href="https://www.gofundme.com/f/rigeneriamo-insieme-il-bosco-della-salandra" target="_blank" class="btn btn-danger">Dona su GoFundMe</a>
-      <a href="https://www.paypal.com/donate/?business=salandralovers@gmail.com" target="_blank" class="btn btn-danger">Dona su PayPal</a>
+      <a href="https://www.gofundme.com/f/rigeneriamo-insieme-il-bosco-della-salandra" target="_blank" class="btn btn-danger btn-donation">Dona su GoFundMe</a>
+      <a href="https://www.paypal.com/donate/?business=salandralovers@gmail.com" target="_blank" class="btn btn-danger btn-donation">Dona su PayPal</a>
     </div>
   </section>
+  
 
   <footer id="contacts" class="text-center bg-dark text-white p-4">
     <h2>Contattaci</h2>
