@@ -262,3 +262,39 @@ iframe {
 .counter {
   font-weight: bold;
 }
+
+#contact-event {
+  text-align: center;
+  margin: 50px 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#contact-event h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+#contact-event p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.whatsapp-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #25d366; /* Colore verde di WhatsApp */
+  color: white;
+  font-size: 1.1em;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  background-color: #128c7e; /* Colore verde più scuro */
+}
+
