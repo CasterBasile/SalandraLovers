@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salandra Lovers - Galleria</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="logo.png" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="bg-success text-white text-center p-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="logo-container d-flex align-items-center">
+        <img src="logo.png" alt="Logo Salandra Lovers" class="logo me-2" width="50" />
+        <div>
+          <h1 class="m-0">Salandra Lovers</h1>
+          <p class="m-0 fs-6">Natura e cultura per la comunità</p>
+        </div>
+      </div>
+      <nav>
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- GALLERY -->
+<main class="gallery">
+  <!-- Foto da 1 a 33 -->
+  <!-- Puoi cambiare le descrizioni se vuoi qualcosa di più specifico -->
+  <a href="photos/photo1.jpg" data-fancybox="gallery" data-caption="Il Ciaurriello, una villa di epoca romana">
+    <img src="photos/photo1.jpg" alt="Foto 1">
+  </a>
+  <a href="photos/photo2.jpg" data-fancybox="gallery" data-caption="Il nostro stand all'eremo">
+    <img src="photos/photo2.jpg" alt="Foto 2">
+  </a>
+  <a href="photos/photo3.jpg" data-fancybox="gallery" data-caption="Ciclisti all'eremo">
+    <img src="photos/photo3.jpg" alt="Foto 3">
+  </a>
+  <a href="photos/photo4.jpg" data-fancybox="gallery" data-caption="Ciclisti all'eremo">
+    <img src="photos/photo4.jpg" alt="Foto 4">
+  </a>
+  <a href="photos/photo5.jpg" data-fancybox="gallery" data-caption="Una delle nostre passeggiate">
+    <img src="photos/photo5.jpg" alt="Foto 5">
+  </a>
+  <a href="photos/photo6.jpg" data-fancybox="gallery" data-caption="Tra i sentieri">
+    <img src="photos/photo6.jpg" alt="Foto 6">
+  </a>
+  <a href="photos/photo7.jpg" data-fancybox="gallery" data-caption="Il meleto di Foragnano">
+    <img src="photos/photo7.jpg" alt="Foto 7">
+  </a>
+  <a href="photos/photo8.jpg" data-fancybox="gallery" data-caption="Melodie dal vivo">
+    <img src="photos/photo8.jpg" alt="Foto 8">
+  </a>
+  <a href="photos/photo9.jpg" data-fancybox="gallery" data-caption="Melodie dal vivo">
+    <img src="photos/photo9.jpg" alt="Foto 9">
+  </a>
+  <a href="photos/photo10.jpg" data-fancybox="gallery" data-caption="Resti di un auto">
+    <img src="photos/photo10.jpg" alt="Foto 10">
+  </a>
+  <a href="photos/photo11.jpg" data-fancybox="gallery" data-caption="Dalla passeggiata col FAI">
+    <img src="photos/photo11.jpg" alt="Foto 11">
+  </a>
+  <a href="photos/photo12.jpg" data-fancybox="gallery" data-caption="Muscari azzurro">
+    <img src="photos/photo12.jpg" alt="Foto 12">
+  </a>
+  <a href="photos/photo13.jpg" data-fancybox="gallery" data-caption="Dalla passeggiata col FAI">
+    <img src="photos/photo13.jpg" alt="Foto 13">
+  </a>
+  <a href="photos/photo14.jpg" data-fancybox="gallery" data-caption="Dalla passeggiata col FAI">
+    <img src="photos/photo14.jpg" alt="Foto 14">
+  </a>
+  <a href="photos/photo15.jpg" data-fancybox="gallery" data-caption="Carmela e Valentina">
+    <img src="photos/photo15.jpg" alt="Foto 15">
+  </a>
+  <a href="photos/photo16.jpg" data-fancybox="gallery" data-caption="Le donne della nostra associazione">
+    <img src="photos/photo16.jpg" alt="Foto 16">
+  </a>
+  <a href="photos/photo17.jpg" data-fancybox="gallery" data-caption="Dalla passeggiata col FAI">
+    <img src="photos/photo17.jpg" alt="Foto 17">
+  </a>
+  <a href="photos/photo18.jpg" data-fancybox="gallery" data-caption="Uno dei nostri eventi">
+    <img src="photos/photo18.jpg" alt="Foto 18">
+  </a>
+  <a href="photos/photo19.jpg" data-fancybox="gallery" data-caption="Uno dei nostri eventi">
+    <img src="photos/photo19.jpg" alt="Foto 19">
+  </a>
+  <a href="photos/photo20.jpg" data-fancybox="gallery" data-caption="Uno dei nostri eventi">
+    <img src="photos/photo20.jpg" alt="Foto 20">
+  </a>
+  <a href="photos/photo21.jpg" data-fancybox="gallery" data-caption="La prima zampeggiata">
+    <img src="photos/photo21.jpg" alt="Foto 21">
+  </a>
+  <a href="photos/photo22.jpg" data-fancybox="gallery" data-caption="La prima zampeggiata">
+    <img src="photos/photo22.jpg" alt="Foto 22">
+  </a>
+  <a href="photos/photo23.jpg" data-fancybox="gallery" data-caption="Dalla passeggiata col FAI">
+    <img src="photos/photo23.jpg" alt="Foto 23">
+  </a>
+  <a href="photos/photo24.jpg" data-fancybox="gallery" data-caption="Dalla passeggiata col FAI">
+    <img src="photos/photo24.jpg" alt="Foto 24">
+  </a>
+  <a href="photos/photo25.jpg" data-fancybox="gallery" data-caption="Dalla passeggiata col FAI">
+    <img src="photos/photo25.jpg" alt="Foto 25">
+  </a>
+  <a href="photos/photo26.jpg" data-fancybox="gallery" data-caption="Melodie dal vivo">
+    <img src="photos/photo26.jpg" alt="Foto 26">
+  </a>
+  <a href="photos/photo27.jpg" data-fancybox="gallery" data-caption="Luigi e i gradini che abbiamo realizzato">
+    <img src="photos/photo27.jpg" alt="Foto 27">
+  </a>
+  <a href="photos/photo28.jpg" data-fancybox="gallery" data-caption="Dalla passeggiata col FAI">
+    <img src="photos/photo28.jpg" alt="Foto 28">
+  </a>
+  <a href="photos/photo29.jpg" data-fancybox="gallery" data-caption="Evento di meditazione all'eremo">
+    <img src="photos/photo29.jpg" alt="Foto 29">
+  </a>
+  <a href="photos/photo30.jpg" data-fancybox="gallery" data-caption="
+Musica e Poesia dal vivo">
+    <img src="photos/photo30.jpg" alt="Foto 30">
+  </a>
+  <a href="photos/photo31.jpg" data-fancybox="gallery" data-caption="Sport nella Salandra">
+    <img src="photos/photo31.jpg" alt="Foto 31">
+  </a>
+  <a href="photos/photo32.jpg" data-fancybox="gallery" data-caption="Un torchio di epoca Romana">
+    <img src="photos/photo32.jpg" alt="Foto 32">
+  </a>
+  <a href="photos/photo33.jpg" data-fancybox="gallery" data-caption="Tra i sentieri">
+    <img src="photos/photo33.jpg" alt="Foto 33">
+  </a>
+</main>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-success text-white text-center py-3 mt-4">
+    <p class="mb-0">&copy; 2025 Salandra Lovers - Tutti i diritti riservati</p>
+  </footer>
+
+</body>
+</html>
