@@ -2,16 +2,14 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="Associazione Salandra Lovers - salvaguardia del Bosco della Salandra a Marano di Napoli tramite eventi culturali e attività nella natura.">
-  <meta name="keywords" content="Bosco della Salandra, Marano di Napoli, natura, eventi, associazione, Salandra Lovers">
-  <meta name="author" content="Salandra Lovers">
+  <meta name="description" content="Associazione Salandra Lovers - calendario eventi del Bosco della Salandra a Marano di Napoli." />
+  <meta name="keywords" content="eventi, calendario, Bosco della Salandra, Marano di Napoli, Salandra Lovers" />
+  <meta name="author" content="Salandra Lovers" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Salandra Lovers</title>
+  <title>Salandra Lovers - Eventi</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="logo.png" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -22,7 +20,6 @@
     h1, h2 {
       font-family: 'Playfair Display', serif;
     }
-    /* layout calendario */
     .calendar {
       table-layout: fixed;
       margin: 0 auto;
@@ -43,14 +40,6 @@
       border-radius: 50%;
       cursor: pointer;
     }
-    main {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* Su schermi grandi, ingrandisci le celle del calendario */
     @media (min-width: 992px) {
       .calendar th, .calendar td {
         width: 60px;
@@ -58,13 +47,15 @@
         font-size: 1rem;
       }
     }
+    main { flex: 1; }
   </style>
 </head>
 <body>
+  <!-- HEADER -->
   <header class="bg-success text-white text-center p-3">
     <div class="container d-flex justify-content-between align-items-center">
       <div class="logo-container d-flex align-items-center">
-        <img src="logo.png" alt="Logo Salandra Lovers" class="logo me-2" width="50" />
+        <img src="logo.png" alt="Logo Salandra Lovers" width="50" class="me-2"/>
         <div>
           <h1 class="m-0">Salandra Lovers</h1>
           <p class="m-0 fs-6">Natura e cultura per la comunità</p>
@@ -72,136 +63,171 @@
       </div>
       <nav>
         <ul class="nav">
-          <li class="nav-item"><a class="nav-link text-white" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="eventi.html">Eventi</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- CALENDARIO -->
-  <main>
-    <div>
-      <h2 class="text-center mb-4">Calendario Eventi – Aprile 2025</h2>
-      <table class="calendar">
-        <thead>
-          <tr>
-            <th>Lun</th><th>Mar</th><th>Mer</th><th>Gio</th><th>Ven</th><th>Sab</th><th>Dom</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
-            <td class="event" data-bs-toggle="modal" data-bs-target="#evento6">6</td>
-          </tr>
-          <tr>
-            <td>7</td><td>8</td><td>9</td><td>10</td><td>11</td>
-            <td class="event" data-bs-toggle="modal" data-bs-target="#evento12">12</td>
-            <td>13</td>
-          </tr>
-          <tr>
-            <td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
-          </tr>
-          <tr>
-            <td>21</td><td>22</td><td>23</td><td>24</td><td>25</td>
-            <td class="event" data-bs-toggle="modal" data-bs-target="#evento26">26</td>
-            <td class="event" data-bs-toggle="modal" data-bs-target="#evento27">27</td>
-          </tr>
-          <tr>
-            <td>28</td><td>29</td><td>30</td><td></td><td></td><td></td><td></td>
-          </tr>
-        </tbody>
-      </table>
-      <p class="text-center mt-3 text-muted">📅 Clicca sui giorni evidenziati per saperne di più.</p>
+  <!-- CALENDARI APRILE & MAGGIO -->
+  <main class="container py-5">
+    <h2 class="text-center mb-5">Calendario Eventi 2025</h2>
+    <div class="row">
+      <!-- APRILE -->
+      <div class="col-lg-6 mb-4">
+        <h3 class="text-center mb-3">Aprile 2025</h3>
+        <table class="calendar">
+          <thead>
+            <tr>
+              <th>Lun</th><th>Mar</th><th>Mer</th><th>Gio</th>
+              <th>Ven</th><th>Sab</th><th>Dom</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+              <td class="event" data-bs-toggle="modal" data-bs-target="#evento6">6</td>
+            </tr>
+            <tr>
+              <td>7</td><td>8</td><td>9</td><td>10</td><td>11</td>
+              <td class="event" data-bs-toggle="modal" data-bs-target="#evento12">12</td>
+              <td>13</td>
+            </tr>
+            <tr>
+              <td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
+            </tr>
+            <tr>
+              <td>21</td><td>22</td><td>23</td><td>24</td><td>25</td>
+              <td class="event" data-bs-toggle="modal" data-bs-target="#evento26">26</td>
+              <td class="event" data-bs-toggle="modal" data-bs-target="#evento27">27</td>
+            </tr>
+            <tr>
+              <td>28</td><td>29</td><td>30</td><td></td><td></td><td></td><td></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="text-center mt-3 text-muted">📅 Clicca sui giorni evidenziati per saperne di più.</p>
+      </div>
+
+      <!-- MAGGIO -->
+      <div class="col-lg-6 mb-4">
+        <h3 class="text-center mb-3">Maggio 2025</h3>
+        <table class="calendar">
+          <thead>
+            <tr>
+              <th>Lun</th><th>Mar</th><th>Mer</th><th>Gio</th>
+              <th>Ven</th><th>Sab</th><th>Dom</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td>
+            </tr>
+            <tr>
+              <td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+              <td class="event" data-bs-toggle="modal" data-bs-target="#evento10">10</td>
+              <td>11</td>
+            </tr>
+            <tr>
+              <td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td>
+            </tr>
+            <tr>
+              <td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td>
+            </tr>
+            <tr>
+              <td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="text-center mt-3 text-muted">📅 Clicca sui giorni evidenziati per saperne di più.</p>
+      </div>
     </div>
   </main>
 
-  <!-- MODAL EVENTO 6 -->
+  <!-- MODAL EVENTI -->
+  <!-- Aprile 6 -->
   <div class="modal fade" id="evento6" tabindex="-1" aria-labelledby="labelEvento6" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="labelEvento6">Evento 6 Aprile</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <p><strong>Passeggiata col FAI nel Bosco della Salandra</strong><br>
-          Giornata del cuore FAI alla scoperta del Bosco della Salandra e dell'eremo di Pietraspaccata.
-          <b>Evento terminato!</b></p>
-          <div class="text-end">
-            <a href="https://www.facebook.com/media/set/?set=a.122203417484124507&type=3&locale=it_IT" class="btn btn-success">Visualizza le foto dell'evento</a>
-          </div>
+    <div class="modal-dialog modal-dialog-centered"><div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="labelEvento6">Evento 6 Aprile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Passeggiata col FAI</strong> nel Bosco della Salandra. Evento terminato!</p>
+        <div class="text-end">
+          <a href="https://www.facebook.com/media/set/?set=a.122203417484124507&type=3&locale=it_IT" class="btn btn-success">Visualizza foto</a>
         </div>
       </div>
-    </div>
+    </div></div>
   </div>
 
-    <!-- MODAL EVENTO 12 -->
-    <div class="modal fade" id="evento12" tabindex="-1" aria-labelledby="labelEvento12" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="labelEvento6">Evento 6 Aprile</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-          </div>
-          <div class="modal-body">
-            <p>
-              Un momento speciale all’<strong>Eremo di Pietraspaccata</strong>: meditazione, silenzio, natura e connessione profonda guidati dalla <strong>Dott.ssa Rosanna Camerlingo</strong>.
-              </p>              
-            <b>Evento terminato!</b></p>
-            <div class="text-end">
-              <a href="https://www.facebook.com/salandraloversboscoforagnano/posts/122204662826124507?" class="btn btn-success">Visualizza le foto dell'evento</a>
-            </div>
-          </div>
+  <!-- Aprile 12 -->
+  <div class="modal fade" id="evento12" tabindex="-1" aria-labelledby="labelEvento12" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"><div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="labelEvento12">Evento 12 Aprile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Momento speciale all’<strong>Eremo di Pietraspaccata</strong> con meditazione guidata da <strong>Dott.ssa Rosanna Camerlingo</strong>. Evento terminato!</p>
+        <div class="text-end">
+          <a href="https://www.facebook.com/salandraloversboscoforagnano/posts/122204662826124507?" class="btn btn-success">Visualizza foto</a>
         </div>
       </div>
-    </div>
+    </div></div>
+  </div>
 
-  <!-- MODAL EVENTO 26 -->
+  <!-- Aprile 26 -->
   <div class="modal fade" id="evento26" tabindex="-1" aria-labelledby="labelEvento26" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="labelEvento26">Evento 26 Aprile</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <p>
-            📸 <strong>Scatti nel Bosco – Esplorazione fotografica nella natura!</strong><br>
-            🌿 <strong>Sabato 26 Aprile</strong> vieni a vivere con noi un’esperienza unica tra i sentieri del Bosco della Salandra, insieme agli amici dell’associazione <strong>ASS e MAZZ</strong>!<br>
-            🕘 <strong>Appuntamento alle ore 9:00</strong><br>
-            📍 <strong>Punto di incontro:</strong> Via Marano-Pianura, nei pressi del Bar Morra<br>
-            👟 <strong>Vieni comodo!</strong> Passeggeremo tra i sentieri, circondati alberi secolari e testimonianze di epoca romana.<br>
-            📷 <strong>Non è necessario essere fotografi esperti:</strong> basta la curiosità e la voglia di stare insieme, immersi nella natura!<br>
-            ✅ <strong>Evento gratuito a numero chiuso</strong><br>
-            💚 Con possibilità di lasciare una <strong>donazione volontaria</strong> a sostegno dell’associazione Salandra Lovers
-            </p>
-            
-          <div class="text-end">
-            <a href="/prenotatiscatti" class="btn btn-success">Prenotati Qui</a>
-          </div>
+    <div class="modal-dialog modal-dialog-centered"><div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="labelEvento26">Evento 26 Aprile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Scatti nel Bosco</strong>: esplorazione fotografica con ASS e MAZZ. Prenota ora!</p>
+        <div class="text-end">
+          <a href="/prenotatiscatti" class="btn btn-success">Prenotati Qui</a>
         </div>
       </div>
-    </div>
+    </div></div>
   </div>
 
-  <!-- MODAL EVENTO 27 -->
+  <!-- Aprile 27 -->
   <div class="modal fade" id="evento27" tabindex="-1" aria-labelledby="labelEvento27" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="labelEvento27">Evento 27 Aprile</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <p>
-            🌳 <strong>Un Bosco in Scena</strong> – Domenica 27 Aprile 2025 ore 10:30, evento di improvvisazione teatrale all'aperto presso l’Eremo di Pietraspaccata, nel Bosco della Salandra. Con il gruppo <strong>Coffee Brecht</strong>, vivi un’esperienza immersiva tra natura e creatività. 🎟 Gratuito con donazione volontaria.</a>.
-            </p>            
-          <div class="text-end">
-            <a href="/prenotati" class="btn btn-success">Prenotati Qui</a>
-          </div>
+    <div class="modal-dialog modal-dialog-centered"><div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="labelEvento27">Evento 27 Aprile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Un Bosco in Scena</strong>: improvvisazioni teatrali con Coffee Brecht. Prenota ora!</p>
+        <div class="text-end">
+          <a href="/prenotati" class="btn btn-success">Prenotati Qui</a>
         </div>
       </div>
-    </div>
+    </div></div>
+  </div>
+
+  <!-- Maggio 10 -->
+  <div class="modal fade" id="evento10" tabindex="-1" aria-labelledby="labelEvento10" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"><div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="labelEvento11">Yoga nel bosco della Salandra</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Yoga nel bosco della Salandra</strong><p>📅 <strong>Sabato 10 Maggio</strong><br>
+          🕥 <strong>Ora di inizio:</strong> 10:30 (Appuntamento alle 10 circa in via Panoramica, nei pressi della masseria di Foragnano)<br>
+          📍 <strong>Luogo:</strong> Eremo di Pietraspaccata<br><br>
+          Un appuntamento di <strong>yoga nel Bosco della Salandra</strong>, in collaborazione con il centro <strong>R_yoga</strong>, per riconnettersi con la natura e ritrovare il proprio equilibrio interiore.</p>
+          
+        <div class="text-end">
+          <a href="/prenotayoga" class="btn btn-success">Prenotati Qui</a>
+        </div>
+      </div>
+    </div></div>
   </div>
 
   <!-- FOOTER -->
