@@ -2,115 +2,60 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="Associazione Salandra Lovers - salvaguardia del Bosco della Salandra a Marano di Napoli tramite eventi culturali e attività nella natura.">
-  <meta name="keywords" content="Bosco della Salandra, Marano di Napoli, natura, eventi, associazione, Salandra Lovers">
-  <meta name="author" content="Salandra Lovers">
+  <meta name="description" content="Associazione Salandra Lovers - calendario eventi del Bosco della Salandra a Marano di Napoli." />
+  <meta name="keywords" content="eventi, calendario, Bosco della Salandra, Marano di Napoli, Salandra Lovers" />
+  <meta name="author" content="Salandra Lovers" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Salandra Lovers</title>
+  <title>Salandra Lovers - Eventi</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="logo.png" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <style>
-body {
-  
+    body {
       font-family: 'Poppins', sans-serif;
-  
       display: flex;
-  
       flex-direction: column;
-  
       min-height: 100vh;
-  
     }
-  
     h1, h2 {
-  
       font-family: 'Playfair Display', serif;
-  
     }
-  
-    /* layout calendario */
-  
     .calendar {
-  
       table-layout: fixed;
-  
       margin: 0 auto;
-  
       border-collapse: separate;
-  
       border-spacing: 5px;
-  
     }
-  
     .calendar th, .calendar td {
-  
       width: 40px;
-  
       height: 40px;
-  
       text-align: center;
-  
       vertical-align: middle;
-  
       border: 1px solid #dee2e6;
-  
       font-size: 0.9rem;
-  
     }
-  
     .calendar td.event {
-  
       background-color: #28a745;
-  
       color: #fff;
-  
       border-radius: 50%;
-  
       cursor: pointer;
-  
     }
-  
-    main {
-  
-      flex: 1;
-  
-      display: flex;
-  
-      align-items: center;
-  
-      justify-content: center;
-  
-    }
-  
-
-  
-    /* Su schermi grandi, ingrandisci le celle del calendario */
-  
     @media (min-width: 992px) {
-  
       .calendar th, .calendar td {
-  
         width: 60px;
-  
         height: 60px;
-  
         font-size: 1rem;
-  
       }
-  
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
     }
+    main { flex: 1; }
   </style>
 </head>
 <body>
+  <!-- HEADER -->
   <header class="bg-success text-white text-center p-3">
     <div class="container d-flex justify-content-between align-items-center">
       <div class="logo-container d-flex align-items-center">
-        <img src="logo.png" alt="Logo Salandra Lovers" class="logo me-2" width="50" />
+        <img src="logo.png" alt="Logo Salandra Lovers" width="50" class="me-2"/>
         <div>
           <h1 class="m-0">Salandra Lovers</h1>
           <p class="m-0 fs-6">Natura e cultura per la comunità</p>
@@ -118,12 +63,12 @@ body {
       </div>
       <nav>
         <ul class="nav">
-          <li class="nav-item"><a class="nav-link text-white" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="eventi.html">Eventi</a></li>
         </ul>
       </nav>
     </div>
   </header>
-<body>
 
   <!-- CALENDARI APRILE & MAGGIO -->
   <main class="container py-5">
@@ -240,25 +185,7 @@ body {
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body">
-        <p>
-
-        📸 <strong>Scatti nel Bosco – Esplorazione fotografica nella natura!</strong><br>
-
-        🌿 <strong>Sabato 26 Aprile</strong> vieni a vivere con noi un’esperienza unica tra i sentieri del Bosco della Salandra, insieme agli amici dell’associazione <strong>ASS e MAZZ</strong>!<br>
-
-        🕘 <strong>Appuntamento alle ore 9:00</strong><br>
-
-        📍 <strong>Punto di incontro:</strong> Via Marano-Pianura, nei pressi del Bar Morra<br>
-
-        👟 <strong>Vieni comodo!</strong> Passeggeremo tra i sentieri, circondati alberi secolari e testimonianze di epoca romana.<br>
-
-        📷 <strong>Non è necessario essere fotografi esperti:</strong> basta la curiosità e la voglia di stare insieme, immersi nella natura!<br>
-
-        ✅ <strong>Evento gratuito a numero chiuso</strong><br>
-
-        💚 Con possibilità di lasciare una <strong>donazione volontaria</strong> a sostegno dell’associazione Salandra Lovers
-
-        </p>
+        <p><strong>Scatti nel Bosco</strong>: esplorazione fotografica con ASS e MAZZ. Prenota ora!</p>
         <div class="text-end">
           <a href="/prenotatiscatti" class="btn btn-success">Prenotati Qui</a>
         </div>
@@ -274,9 +201,7 @@ body {
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body">
-        <p>
-        🌳 <strong>Un Bosco in Scena</strong> – Domenica 27 Aprile 2025 ore 10:30, evento di improvvisazione teatrale all'aperto presso l’Eremo di Pietraspaccata, nel Bosco della Salandra. Con il gruppo <strong>Coffee Brecht</strong>, vivi un’esperienza immersiva tra natura e creatività. 🎟 Gratuito con donazione volontaria.</a>.
-        </p>            
+        <p><strong>Un Bosco in Scena</strong>: improvvisazioni teatrali con Coffee Brecht. Prenota ora!</p>
         <div class="text-end">
           <a href="/prenotati" class="btn btn-success">Prenotati Qui</a>
         </div>
