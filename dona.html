@@ -67,7 +67,36 @@
       <a href="https://www.paypal.com/donate/?business=salandralovers@gmail.com" target="_blank" class="btn btn-danger btn-donation">Dona su PayPal</a>
     </div>
   </section>
-  
+  <section id="iban-donation" class="py-5 text-center">
+  <div class="container">
+    <h2>Dona con Bonifico Bancario</h2>
+    <p>Puoi contribuire anche tramite bonifico bancario. Ecco l'IBAN:</p>
+    <div class="d-flex justify-content-center align-items-center gap-3">
+      <input type="text" id="iban" class="form-control text-center w-auto" value="IT86T0306909606100000402905" readonly style="max-width: 350px;" />
+      <button onclick="copyIBAN()" class="btn btn-outline-success">Copia IBAN</button>
+    </div>
+  </div>
+</section>
+
+<section id="five-per-mille" class="bg-light py-5 text-center">
+  <div class="container">
+    <h2>5x1000 - Un gesto gratuito per il Bosco</h2>
+    <p><strong>Salandra Lovers ha un grande progetto</strong>: la riqualificazione del Bosco della Salandra a Marano.</p>
+    <p>Puoi sostenerci <strong>IN MODO GRATUITO</strong> donando il tuo 5x1000:</p>
+    <p><strong>Codice fiscale: <span class="text-danger">95334860632</span></strong></p>
+    <p>Comunicalo al tuo commercialista!</p>
+  </div>
+</section>
+
+<script>
+  function copyIBAN() {
+    const ibanInput = document.getElementById("iban");
+    ibanInput.select();
+    ibanInput.setSelectionRange(0, 99999); // per mobile
+    document.execCommand("copy");
+    alert("IBAN copiato negli appunti!");
+  }
+</script>
 
   <footer id="contacts" class="text-center bg-dark text-white p-4">
     <h2>Contattaci</h2>
