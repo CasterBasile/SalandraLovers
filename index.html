@@ -8,21 +8,312 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Salandra Lovers</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link rel="icon" href="logo.png" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <style>
     body {
       font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa; /* Light background for contrast */
     }
     h1, h2, h3 {
       font-family: 'Playfair Display', serif;
+      color: #28a745; /* Green color for headings */
+    }
+    .header-custom {
+      background-color: #28a745; /* Bootstrap success green */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .nav-link {
+      transition: color 0.3s ease-in-out;
+    }
+    .nav-link:hover {
+      color: #d4edda !important; /* Lighter green on hover */
+    }
+
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('photos/photo1.jpg') no-repeat center center;
+      background-size: cover;
+      color: white;
+      padding: 120px 0;
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 1.5s ease-out;
+    }
+    .hero-section h2 {
+      color: white;
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+    }
+    .hero-section p {
+      font-size: 1.25rem;
+      margin-bottom: 30px;
+    }
+    .hero-section .btn {
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    }
+    .hero-section .btn:hover {
+      transform: translateY(-5px);
+      background-color: #218838; /* Darker green on hover */
+    }
+
+    /* Section Styling */
+    section {
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    section:nth-of-type(even) {
+      background-color: #f1f8f3; /* Light green tint for alternating sections */
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+      font-size: 2.5rem;
+      position: relative;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background-color: #28a745;
+      margin: 15px auto 0;
+      border-radius: 2px;
+    }
+
+    /* About Section */
+    .about-content {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+    .about-text {
+      flex: 1;
+    }
+    .about-image-wrapper {
+      flex: 1;
+      text-align: center;
+    }
+    .about-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      transition: transform 0.5s ease-in-out;
+    }
+    .about-image:hover {
+      transform: scale(1.03);
+    }
+
+    /* Events Section - New Gallery Layout */
+    .event-gallery-item {
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      cursor: pointer; /* Indicate clickable */
+      position: relative;
+      height: 250px; /* Fixed height for consistent grid */
+    }
+    .event-gallery-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+    }
+    .event-gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .event-gallery-item:hover img {
+      transform: scale(1.05);
+    }
+    .event-gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%);
+      color: white;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .event-gallery-item:hover .event-gallery-overlay {
+      opacity: 1;
+    }
+
+    /* Support Section */
+    .support-section {
+      background-color: #d4edda; /* Light green background */
+      text-align: center;
+      padding: 60px 0;
+    }
+    .support-section h2 {
+      color: #28a745;
+      margin-bottom: 20px;
+    }
+    .support-section p {
+      font-size: 1.1rem;
+      color: #333;
+      margin-bottom: 30px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .support-section .btn {
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    }
+    .support-section .btn:hover {
+      transform: translateY(-5px);
+      background-color: #218838;
+    }
+
+
+    /* Giornalino Section */
+    .giornalino-section {
+      background-color: #e2f0e4; /* Lighter green background */
+      text-align: center;
+    }
+    .giornalino-section .btn {
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    .giornalino-section .btn:hover {
+      background-color: #5a6268; /* Darker secondary on hover */
+      transform: translateY(-3px);
+    }
+
+    /* Contact Event Section */
+    .contact-event-section {
+      text-align: center;
+    }
+    .whatsapp-button {
+      display: inline-flex;
+      align-items: center;
+      background-color: #25D366; /* WhatsApp green */
+      color: white;
+      padding: 12px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-top: 20px;
+      transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    .whatsapp-button:hover {
+      background-color: #1DA851;
+      transform: translateY(-5px);
+      color: white;
+    }
+    .whatsapp-button::before {
+      content: '\2709'; /* Unicode for envelope/message icon */
+      margin-right: 10px;
+      font-size: 1.2em;
+    }
+
+    /* Gallery Section */
+    .carousel-item img {
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      max-height: 600px; /* Limit carousel image height */
+      object-fit: cover;
+    }
+    .carousel-control-prev, .carousel-control-next {
+      width: 5%;
+    }
+    .carousel-control-prev-icon, .carousel-control-next-icon {
+      background-color: rgba(0,0,0,0.5);
+      border-radius: 50%;
+      padding: 15px;
+    }
+    .gallery-button {
+      margin-top: 40px;
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    }
+    .gallery-button:hover {
+      transform: translateY(-5px);
+      background-color: #218838;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #343a40; /* Dark background */
+      color: white;
+      padding: 60px 0;
+    }
+    footer h2 {
+      color: #28a745;
+      margin-bottom: 30px;
+    }
+    footer .btn {
+      margin: 5px;
+      border-radius: 50px;
+      transition: transform 0.3s ease-in-out;
+    }
+    footer .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .animate-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .hero-section h2 {
+        font-size: 2.5rem;
+      }
+      .hero-section p {
+        font-size: 1rem;
+      }
+      .about-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .about-image-wrapper {
+        order: -1; /* Image above text on small screens */
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+      .event-gallery-item {
+        height: 200px; /* Adjust height for smaller screens */
+      }
     }
   </style>
 </head>
 <body>
-  <header class="bg-success text-white text-center p-3">
+  <header class="header-custom text-white p-3">
     <div class="container d-flex justify-content-between align-items-center">
       <div class="logo-container d-flex align-items-center">
         <img src="logo.png" alt="Logo Salandra Lovers" class="logo me-2" width="50" />
@@ -34,7 +325,6 @@
       <nav>
         <ul class="nav">
           <li class="nav-item"><a class="nav-link text-white" href="#about">Chi Siamo</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#events">Eventi</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="/dona">Sostienici</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="#contacts">Contatti</a></li>
         </ul>
@@ -42,123 +332,128 @@
     </div>
   </header>
   
-
-  <section id="hero" class="text-center py-5 bg-light">
-    <h2>Unisciti a noi per proteggere il Bosco della Salandra</h2>
-    <p>Scopri il nostro impegno per la salvaguardia della natura e partecipa alle nostre attività.</p>
-    <a href="#events" class="btn btn-success">Scopri di più</a>
-  </section>
-
-  <section id="about" class="container py-5">
-    <h2>Chi Siamo</h2>
-    <p><strong>Salandra Lovers</strong> è un’associazione che dal 2023 si dedica alla riqualifica e valorizzazione del <strong>Bosco della Salandra</strong>, un suggestivo castagneto situato a <strong>Marano di Napoli</strong>. Il nostro obiettivo è restituire al bosco il suo splendore attraverso azioni concrete: <strong>ripuliamo l’area dai rifiuti, riapriamo i sentieri abbandonati</strong> e organizziamo eventi per far conoscere questo tesoro naturale e storico. Crediamo nella tutela dell’ambiente e nel coinvolgimento della comunità per rendere il Bosco della Salandra un luogo accessibile e fruibile da tutti.</p>
-  </section>
-  <section id="events" class="container py-5">
-    <h2>Prossimi Eventi</h2>
-  
-    <!-- Bottone centrato -->
-    <div class="text-center mb-3">
-      <a href="/eventi" class="btn btn-success">Vedi tutti gli eventi futuri</a>
+  <section id="hero" class="hero-section text-center">
+    <div class="container">
+      <h2 class="animate-on-scroll">Unisciti a noi per proteggere il Bosco della Salandra</h2>
+      <p class="animate-on-scroll">Scopri il nostro impegno per la salvaguardia della natura e partecipa alle nostre attività.</p>
+      <a href="https://www.facebook.com/salandraloversboscoforagnano/" class="btn btn-success animate-on-scroll">Scopri di più</a>
     </div>
-  
-    <!-- Breve introduzione -->
+  </section>
+
+  <section id="about" class="container animate-on-scroll">
+    <h2 class="section-title">Chi Siamo</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p><strong>Salandra Lovers</strong> è un’associazione che dal 2023 si dedica alla riqualifica e valorizzazione del <strong>Bosco della Salandra</strong>, un suggestivo castagneto situato a <strong>Marano di Napoli</strong>. Il nostro obiettivo è restituire al bosco il suo splendore attraverso azioni concrete: <strong>ripuliamo l’area dai rifiuti, riapriamo i sentieri abbandonati</strong> e organizziamo eventi per far conoscere questo tesoro naturale e storico. Crediamo nella tutela dell’ambiente e nel coinvolgimento della comunità per rendere il Bosco della Salandra un luogo accessibile e fruibile da tutti.</p>
+      </div>
+      <div class="about-image-wrapper">
+        <img src="photos/photo2.jpg" alt="Bosco della Salandra" class="img-fluid about-image">
+      </div>
+    </div>
+  </section>
+
+  <section id="support" class="support-section animate-on-scroll">
+    <div class="container">
+      <h2 class="section-title">Sostieni la Nostra Missione</h2>
+      <p>Ogni contributo, grande o piccolo, ci aiuta a continuare il nostro lavoro di riqualifica e valorizzazione del Bosco della Salandra. Il tuo supporto è fondamentale per proteggere questo tesoro naturale per le generazioni future.</p>
+      <a href="https://salandralovers.it/dona" class="btn btn-success">Fai una Donazione</a>
+    </div>
+  </section>
+
+  <section id="events" class="container animate-on-scroll">
+    <h2 class="section-title">I Nostri Eventi in Immagini</h2>
     <p class="mb-4 text-muted text-center">
-      Di seguito i prossimi eventi del mese di Maggio.
+      Esplora la nostra galleria di momenti speciali e attività svolte nel Bosco della Salandra.
     </p>
-
-  
-
-      <div class="card p-3">
-      <p><strong>Giornata di Primo Soccorso e BLS nel Bosco della Salandra</strong></p>
-      <p>📅 <strong>Domenica 8 Giugno 2025</strong></p>
-      <p>🕥 <strong>Ora d’inizio:</strong> ore 10:00</p>
-      <p>📍 <strong>Luogo:</strong> Appuntamento in Via Panoramica, nei pressi della Masseria di Foragnano</p>
-      <p>In collaborazione con l'associazione<strong> Tutela Aziende Villaricca</strong>.</p>
-      <p>Una giornata dedicata alle tecniche di primo soccorso.</p>
-      <p><strong>EVENTO A NUMERO CHIUSO</strong></p>
-      <a href="/prenotati.html" target="_blank" class="btn btn-primary">Prenotati qui</a>
-  </section>
-  
-  <section id="Newsletter" class="bg-light py-5 text-center">
-    <h2>Newsletter</h2>
-    <p>Iscriviti alla Newsletter della nostra associazione per restare aggiornato sugli eventi e sui progressi!</p>
-    <div class="d-flex justify-content-center gap-3">
-      <a href="https://salandralovers.it/newsletter" target="_blank" class="btn btn-info">Iscriviti alla Newsletter</a>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="event-gallery-item" onclick="window.open('https://www.facebook.com/salandraloversboscoforagnano/', '_blank')">
+          <img src="photos/photo3.jpg" alt="Evento Bosco 1" class="img-fluid">
+          <div class="event-gallery-overlay">Pulizia del Bosco</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="event-gallery-item" onclick="window.open('https://www.facebook.com/salandraloversboscoforagnano/', '_blank')">
+          <img src="photos/photo4.jpg" alt="Evento Bosco 2" class="img-fluid">
+          <div class="event-gallery-overlay">Passeggiate Naturalistiche</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="event-gallery-item" onclick="window.open('https://www.facebook.com/salandraloversboscoforagnano/', '_blank')">
+          <img src="photos/photo5.jpg" alt="Evento Bosco 3" class="img-fluid">
+          <div class="event-gallery-overlay">Attività per Famiglie</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="event-gallery-item" onclick="window.open('https://www.facebook.com/salandraloversboscoforagnano/', '_blank')">
+          <img src="photos/photo6.jpg" alt="Evento Bosco 4" class="img-fluid">
+          <div class="event-gallery-overlay">Recupero Sentieri</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="event-gallery-item" onclick="window.open('https://www.facebook.com/salandraloversboscoforagnano/', '_blank')">
+          <img src="photos/photo7.jpg" alt="Evento Bosco 5" class="img-fluid">
+          <div class="event-gallery-overlay">Educazione Ambientale</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="event-gallery-item" onclick="window.open('https://www.facebook.com/salandraloversboscoforagnano/', '_blank')">
+          <img src="photos/photo8.jpg" alt="Evento Bosco 6" class="img-fluid">
+          <div class="event-gallery-overlay">Concerti nel Verde</div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-5">
+      <a href="https://www.facebook.com/salandraloversboscoforagnano/" class="btn btn-success btn-lg">Vedi tutti gli eventi passati e futuri</a>
     </div>
   </section>
-  <section id="giornalino" class="bg-light py-5 text-center">
-    <h2>Il Bosco Racconta - Il giornalino della nostra associazione!</h2>
+  
+  <section id="giornalino" class="giornalino-section py-5 animate-on-scroll">
+    <h2 class="section-title">Il Bosco Racconta - Il giornalino della nostra associazione!</h2>
     <p>Leggi il giornalino per scoprire le ultime novità sulla nostra associazione e sul Bosco della Salandra.</p>
     <div class="d-flex justify-content-center gap-3">
       <a href="https://salandralovers.it/giornalino" target="_blank" class="btn btn-secondary">Sfoglia il Giornalino</a>
     </div>
   </section>
   
-<section id="contact-event">
-  <h2>Sei un'associazione o vuoi organizzare un evento con noi?</h2>
-  <p>Clicca sul tasto qui sotto per contattarci direttamente su WhatsApp:</p>
-  <a href="https://wa.me/+393281448269?text=Salve,%20vorrei%20organizzare%20un%20evento%20con%20la%20vostra%20associazione." class="whatsapp-button">
-    Contattaci su WhatsApp
-  </a>
-</section>
+  <section id="contact-event" class="contact-event-section container py-5 animate-on-scroll">
+    <h2 class="section-title">Sei un'associazione o vuoi organizzare un evento con noi?</h2>
+    <p>Clicca sul tasto qui sotto per contattarci direttamente su WhatsApp:</p>
+    <a href="https://wa.me/+393281448269?text=Salve,%20vorrei%20organizzare%20un%20evento%20con%20la%20vostra%20associazione." class="whatsapp-button">
+      Contattaci su WhatsApp
+    </a>
+  </section>
 
-  <section id="gallery" class="container py-5">
-    <h2>Il Bosco della Salandra in immagini</h2>
+  <section id="gallery" class="container py-5 animate-on-scroll">
+    <h2 class="section-title">Il Bosco della Salandra in immagini</h2>
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="photos/photo1.jpg" class="d-block w-100" alt="Photo 1" />
+          <img src="photos/photo9.jpg" class="d-block w-100" alt="Photo 9" />
         </div>
         <div class="carousel-item">
-          <img src="photos/photo2.jpg" class="d-block w-100" alt="Photo 2" />
+          <img src="photos/photo10.jpg" class="d-block w-100" alt="Photo 10" />
         </div>
         <div class="carousel-item">
-          <img src="photos/photo3.jpg" class="d-block w-100" alt="Photo 3" />
-        </div>
-                <div class="carousel-item">
-          <img src="photos/photo3.jpg" class="d-block w-100" alt="Photo 3" />
-        </div>
-         <div class="carousel-item">
-          <img src="photos/photo4.jpg" class="d-block w-100" alt="Photo 3" />
+          <img src="photos/photo11.jpg" class="d-block w-100" alt="Photo 11" />
         </div>
         <div class="carousel-item">
-          <img src="photos/photo5.jpg" class="d-block w-100" alt="Photo 3" />
-        </div>
-         <div class="carousel-item">
-          <img src="photos/photo6.jpg" class="d-block w-100" alt="Photo 3" />
+          <img src="photos/photo12.jpg" class="d-block w-100" alt="Photo 12" />
         </div>
         <div class="carousel-item">
-          <img src="photos/photo7.jpg" class="d-block w-100" alt="Photo 3" />
+          <img src="photos/photo13.jpg" class="d-block w-100" alt="Photo 13" />
         </div>
         <div class="carousel-item">
-          <img src="photos/photo8.jpg" class="d-block w-100" alt="Photo 3" />
-        </div>
-         <div class="carousel-item">
-          <img src="photos/photo9.jpg" class="d-block w-100" alt="Photo 3" />
-        </div>
-         <div class="carousel-item">
-          <img src="photos/photo10.jpg" class="d-block w-100" alt="Photo 3" />
-        </div>
-                <div class="carousel-item">
-          <img src="photos/photo11.jpg" class="d-block w-100" alt="Photo 2" />
+          <img src="photos/photo14.jpg" class="d-block w-100" alt="Photo 14" />
         </div>
         <div class="carousel-item">
-          <img src="photos/photo12.jpg" class="d-block w-100" alt="Photo 3" />
-        </div>
-                <div class="carousel-item">
-          <img src="photos/photo13.jpg" class="d-block w-100" alt="Photo 3" />
-        </div>
-         <div class="carousel-item">
-          <img src="photos/photo14.jpg" class="d-block w-100" alt="Photo 3" />
+          <img src="photos/photo15.jpg" class="d-block w-100" alt="Photo 15" />
         </div>
         <div class="carousel-item">
-          <img src="photos/photo15.jpg" class="d-block w-100" alt="Photo 3" />
-        </div>
-         <div class="carousel-item">
-          <img src="photos/photo16.jpg" class="d-block w-100" alt="Photo 3" />
+          <img src="photos/photo16.jpg" class="d-block w-100" alt="Photo 16" />
         </div>
         <div class="carousel-item">
-          <img src="photos/photo17.jpg" class="d-block w-100" alt="Photo 3" />
+          <img src="photos/photo17.jpg" class="d-block w-100" alt="Photo 17" />
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -168,22 +463,43 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
       </button>
     </div>
+    <div class="text-center my-4">
+      <a href="album.html" class="btn btn-success btn-lg gallery-button">Vai all'Album Fotografico</a>
+    </div>
   </section>
-<div class="text-center my-4">
-  <a href="album.html" class="btn btn-success btn-lg">Vai all'Album Fotografico</a>
-</div>
 
-  <footer id="contacts" class="text-center bg-dark text-white p-4">
-    <h2>Contattaci</h2>
-    <p><strong>Email:</strong> salandralovers@gmail.com</p>
-    <p><strong>Seguici sui social:</strong></p>
-    <div>
-      <a href="https://www.facebook.com/salandraloversboscoforagnano/" target="_blank" class="btn btn-primary">Facebook</a>
-      <a href="https://www.instagram.com/salandralovers/" target="_blank" class="btn btn-danger">Instagram</a>
-      <a href="https://wa.me/393281448269" target="_blank" class="btn btn-success">WhatsApp</a>
-      <a href="https://www.facebook.com/groups/950471052240086?locale=it_IT" target="_blank" class="btn btn-primary">Gruppo Privato Facebook</a>
+  <footer id="contacts" class="text-center bg-dark text-white animate-on-scroll">
+    <div class="container">
+      <h2 class="section-title">Contattaci</h2>
+      <p><strong>Email:</strong> salandralovers@gmail.com</p>
+      <p><strong>Seguici sui social:</strong></p>
+      <div>
+        <a href="https://www.facebook.com/salandraloversboscoforagnano/" target="_blank" class="btn btn-primary">Facebook</a>
+        <a href="https://www.instagram.com/salandralovers/" target="_blank" class="btn btn-danger">Instagram</a>
+        <a href="https://wa.me/393281448269" target="_blank" class="btn btn-success">WhatsApp</a>
+        <a href="https://www.facebook.com/groups/950471052240086?locale=it_IT" target="_blank" class="btn btn-primary">Gruppo Privato Facebook</a>
+      </div>
     </div>
   </footer>
-  
+
+  <script>
+    // JavaScript for scroll animations
+    document.addEventListener('DOMContentLoaded', () => {
+      const animateOnScrollElements = document.querySelectorAll('.animate-on-scroll');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target); // Stop observing once visible
+          }
+        });
+      }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
+
+      animateOnScrollElements.forEach(element => {
+        observer.observe(element);
+      });
+    });
+  </script>
 </body>
 </html>
