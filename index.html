@@ -182,6 +182,59 @@
       background-color: #218838;
     }
 
+    /* 5xmille Section */
+    .cinque-per-mille-section {
+      background-color: #e6ffe6; /* Very light green, distinct from other sections */
+      text-align: center;
+      padding: 80px 0;
+      box-shadow: inset 0 3px 10px rgba(0,0,0,0.05);
+    }
+    .cinque-per-mille-section h2 {
+      color: #1a7e32; /* Darker green for emphasis */
+      margin-bottom: 25px;
+      font-size: 2.8rem;
+    }
+    .cinque-per-mille-section p {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 40px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+    .cinque-per-mille-button {
+      background-color: #ffc107; /* Bright, engaging yellow for visibility */
+      color: #343a40; /* Dark text for contrast */
+      padding: 18px 45px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      border-radius: 60px;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+      border: 3px solid #ffc107;
+      box-shadow: 0 5px 15px rgba(255,193,7,0.4);
+      letter-spacing: 0.5px;
+    }
+    .cinque-per-mille-button:hover {
+      background-color: #e0a800; /* Darker yellow on hover */
+      border-color: #e0a800;
+      color: #fff;
+      transform: translateY(-7px) scale(1.02);
+      box-shadow: 0 10px 25px rgba(255,193,7,0.6);
+    }
+    .codice-fiscale {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #28a745;
+      margin-top: 30px;
+      background-color: #f0fdf0;
+      padding: 15px 25px;
+      border-radius: 10px;
+      display: inline-block;
+      border: 1px solid #c3e6cb;
+    }
+
 
     /* Giornalino Section */
     .giornalino-section {
@@ -309,6 +362,13 @@
       .event-gallery-item {
         height: 200px; /* Adjust height for smaller screens */
       }
+      .cinque-per-mille-button {
+        font-size: 1.2rem;
+        padding: 15px 30px;
+      }
+      .codice-fiscale {
+        font-size: 1.1rem;
+      }
     }
   </style>
 </head>
@@ -349,6 +409,21 @@
       <div class="about-image-wrapper">
         <img src="photos/photo2.jpg" alt="Bosco della Salandra" class="img-fluid about-image">
       </div>
+    </div>
+  </section>
+
+  <section id="cinque-per-mille" class="cinque-per-mille-section animate-on-scroll">
+    <div class="container">
+      <h2 class="section-title">Dona il tuo 5 per mille!</h2>
+      <p>
+        Sostieni il nostro impegno per la tutela e la valorizzazione del Bosco della Salandra 
+        donando il tuo 5 per mille. È un gesto semplice che non ti costa nulla, ma per noi significa molto! 
+        Con il tuo aiuto potremo continuare a prendercene cura e a renderlo un luogo migliore per tutti.
+      </p>
+      <a href="https://salandralovers.it/dona" class="cinque-per-mille-button">
+        Scopri come donare il tuo 5 per mille
+      </a>
+      <p class="codice-fiscale mt-4">C.F. per il 5 per mille: <strong>95209760636</strong></p>
     </div>
   </section>
 
